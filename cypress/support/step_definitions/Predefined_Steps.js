@@ -34,12 +34,11 @@ Then(`I wait for {int} sec`, (sec) => {
   cy.wait(sec * 1000);
 });
 
-//FUCK IT CHANGE ALL TO CSS XPATH IS DEADDDDDDD!!!!!!
 Then(`element with selector {string} should be present`, (selector) => {
   cy.get(selector).should("be.visible");
 });
 
-Then(`element with xpath {string} should NOT be present`, (xpath) => {});
+Then(`element with xpath {string} should NOT be present`, (selector) => {});
 
 Then(`I wait for element with selector {string} to be present`, (selector) => {
   cy.get(selector).should("be.visible");
@@ -47,7 +46,7 @@ Then(`I wait for element with selector {string} to be present`, (selector) => {
 
 Then(
   `I wait for element with selector {string} to NOT be present`,
-  (xpath) => {}
+  (selector) => {}
 );
 
 //Type
