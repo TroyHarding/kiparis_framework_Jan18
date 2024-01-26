@@ -5,10 +5,23 @@ import {
   Then,
   And,
 } from "@badeball/cypress-cucumber-preprocessor";
-import 'cypress-iframe'
+import "cypress-iframe";
 
 Given(`I open url {string}`, (url) => {
-  cy.visit(url);
+    cy.visit(url);
+});
+
+Given(`I ignore error`, () => {
+  cy.on('uncaught:exception', (err, runnable, promise) => {
+    // when the exception originated from an unhandled promise
+    // rejection, the promise is provided as a third argument
+    // you can turn off failing the test in this case
+    if (promise) {
+      return false
+    }
+    // we still want to ensure there are no other unexpected
+    // errors, so we let them fail the test
+  })
 });
 
 Given(`I resize window to {int} and {int}"`, (width, height) => {
@@ -44,9 +57,10 @@ Then(`I wait for element with selector {string} to be present`, (selector) => {
   cy.get(selector).should("be.visible");
 });
 
-Then(
-  `I wait for element with selector {string} to NOT be present`,
-  (selector) => {}
+Then(`I wait for element with selector {string} to NOT be present`,
+  (selector) => {
+    cy.get(selector).should("not.be.visible");
+  }
 );
 
 //Type
@@ -85,11 +99,13 @@ Then(
 
 Then(
   `element with xpath {string} should NOT contain text {string}`,
-  (xpath, text) => {}
+  (selector, text) => {
+    cy.get(selector).contains(text).should("not.exist");
+  }
 );
 
 Given(`I verify iframe with selector {string} has loaded`, (selector) => {
-  cy.frameLoaded('#Your\ project\:\ \'Test\ Project\'');
+  cy.frameLoaded("#Your project: 'Test Project'");
 });
 
 Then(
@@ -108,7 +124,11 @@ Then(`I swith to first window`, () => {});
 Then(`I swith to a new tab`, () => {});
 Then(`I swith to first tab`, () => {});
 //alerts
-Then(`I accept alert`, () => {});
+Then(`I accept alert`, () => {
+  cy.window().then((win) => {
+    cy.stub(win, 'confirm').returns(true);
+  });
+});
 Then(`I dismiss alert`, () => {});
 Then(`I clear alert with xpath {string}`, (xpath) => {});
 //Hover
