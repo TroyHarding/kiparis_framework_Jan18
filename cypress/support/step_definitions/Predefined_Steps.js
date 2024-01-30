@@ -98,7 +98,7 @@ Then(
 );
 
 Then(
-  `element with xpath {string} should NOT contain text {string}`,
+  `element with selector {string} should NOT contain text {string}`,
   (selector, text) => {
     cy.get(selector).contains(text).should("not.exist");
   }
@@ -123,13 +123,29 @@ Then(`I swith to first window`, () => {});
 //Tab
 Then(`I swith to a new tab`, () => {});
 Then(`I swith to first tab`, () => {});
-//alerts
+
+//Accpets Any alerts
 Then(`I accept alert`, () => {
   cy.window().then((win) => {
     cy.stub(win, 'confirm').returns(true);
   });
 });
-Then(`I dismiss alert`, () => {});
+
+//Dismiss Alert
+Then(`I dismiss alert`, () => {
+  cy.on('window:alert', (text) => {  
+    return false;
+  });
+});
+
+//Check for text alert
+Then(`I check the alert text is {string}`, (expectedText) => {
+  cy.on('window:alert', (expectedText) => {
+    expect(expectedText).to.equal(expectedText);
+  });
+});
+
+
 Then(`I clear alert with xpath {string}`, (xpath) => {});
 //Hover
 Then(`I hover over elemt with xpath`, () => {});
