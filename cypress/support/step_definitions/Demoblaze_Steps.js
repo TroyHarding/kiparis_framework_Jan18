@@ -6,6 +6,8 @@ import {
   And,
 } from "@badeball/cypress-cucumber-preprocessor";
 import "cypress-iframe";
+import demoblazeHome from "../page-object/demoblazeHome_PO";
+import demoblazeProduct from "../page-object/demoblazeProduct_PO";
 
 //NEW STUFF
 Given(`I log in as a valid user to demoblaze`, () => {
@@ -72,9 +74,11 @@ Given(`I open url {string}`, (arg0) => {
 });
 
 Given(`new step`, () => {
-  // [Given] Sets up the initial state of the system.
+  const samsungProduct = new demoblazeProduct;
+  samsungProduct.verifyProduct();
 });
 
 When(`I do stuff`, () => {
-  // [Given] Sets up the initial state of the system.
+    const po = new demoblazeHome;
+    po.loginValid();
 });
