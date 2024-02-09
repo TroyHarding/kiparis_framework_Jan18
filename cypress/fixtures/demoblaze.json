@@ -1,6 +1,10 @@
 {
-    "baseUrl": "https://www.demoblaze.com/",
+    "baseUrl": "https://www.demoblaze.com/",    
     "username": "billyjoebob",
-    "password": "password1"
+    "password": "password1",
+    "loginbutton": "#login2",
+
+    "invalidUser": "billyRayCyrus",
+    "invalidPassword": "password2"
   }
   
