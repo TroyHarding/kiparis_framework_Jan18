@@ -10,6 +10,7 @@ class demoblazeHome {
     this.footerAbout = "h4[class='grrrr']";
     this.footerText = "h4.grrrr + p";
     this.categories = "a[class='list-group-item']";
+    this.footerAddr = "div[class='col-sm-3 col-lg-3 col-md-3']";
     
   }
 
@@ -34,6 +35,7 @@ class demoblazeHome {
   checkFooter() {
     cy.get(this.footerAbout).should('have.text', 'About UsGet in Touch');
     cy.get(this.footerText).should('contain', 'We believe performance needs');
+    cy.get(this.footerAddr).should('contain','Address: 2390 El Camino Real');
   }
   checkCategories(){
     cy.get(this.categories).should('contain', 'Phones');
