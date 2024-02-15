@@ -14,3 +14,5 @@ class demoblazeCart{
 
 
 }
+
+export default demoblazeCart;

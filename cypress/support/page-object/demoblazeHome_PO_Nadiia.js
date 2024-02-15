@@ -12,21 +12,22 @@ class demoblazeHome {
     }
   
     loginValid() {
-      cy.fixture("demoblaze.json").then((data) => {
+      cy.fixture("demoblazeNadiia.json").then((data) => {
         cy.visit(data.baseUrl);
         cy.get(this.loginButton).click();
         cy.get(this.usernameInput).type(data.username);
+        cy.wait(5000);
         cy.get(this.passwordInput).type(data.password);
         cy.get(this.loginButtonModal).click();
       });
     }
 
     headerFooterTest() {
-        cy.fixture("demoblaze.json").then((data) => {
+        cy.fixture("demoblazeNadiia.json").then((data) => {
           cy.visit(data.baseUrl);
-          cy.get(logoutButtonModal).should("be.visible");
-          cy.get(userNameField).contains(`Welcome ${data.userName}`).should("exist");
-          cy.get(aboutUs).contains(data.aboutUs)
+          cy.get(this.logoutButtonModal).should("be.visible");
+          cy.get(this.userNameField).contains(`Welcome ${data.userName}`).should("exist");
+          cy.get(this.aboutUs).contains(data.aboutUs)
     
       });
     }

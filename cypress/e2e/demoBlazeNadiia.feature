@@ -6,7 +6,7 @@ Feature: Demoblaze site
     Scenario: End to end
         Given I login to Demoblaze as a valid user
         Then I verify header and footer is correct
-        # When I filter product for "Laptops" category
+        When I filter product for "Laptops" category
         # Then I should see the product "MacBook Pro"
         # When I click and navigate to the "Macbook Pro" product page
         # # Then I verify that you are on the "MacBook Pro" Product Page

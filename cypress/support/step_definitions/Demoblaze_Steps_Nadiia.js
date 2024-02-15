@@ -6,8 +6,9 @@ import {
     And,
   } from "@badeball/cypress-cucumber-preprocessor";
   import "cypress-iframe";
-  import demoblazeHome from "../page-object/demoblazeHome_PO";
-  import demoblazeProduct from "../page-object/demoblazeProduct_PO";
+  import demoblazeHome from "../page-object/demoblazeHome_PO_Nadiia";
+  import demoblazeProduct from "../page-object/demoblazeProduct_PO_Nadiia";
+  import demoblazeCart from "../page-object/demoblazeCart_PO_Nadiia";
 
   Given(`I log in as a valid user to demoblaze`, () => {
     const po = new demoblazeHome;
@@ -26,26 +27,6 @@ import {
   });
   
   When(`I filter product for {string} category`, (product) => {
-    switch (product) {
-      case value:
-        "Laptop";
-        console.log("This is a laptop");
-        break;
-      case value:
-        "Phone";
-        console.log("This is a Phone");
-        break;
-      case value:
-        "Monitors";
-        console.log("This is a Minotr");
-        break;
-      default:
-        console.log("This Aint it");
-        break;
-    }
-  });
-  
-  Given(`dfdfdfdf`, (product) => {
     switch (product) {
       case value:
         "Laptop";
