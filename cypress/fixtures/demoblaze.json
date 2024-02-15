@@ -1,0 +1,18 @@
+{
+    "baseUrl": "https://www.demoblaze.com/",
+    "username": "nz",
+    "password": "12",
+    "userName" : "nz",
+    "aboutUs" : "We believe performance needs to be validated at every stage of the software development cycle and our open source compatible, massively scalable platform makes that a reality.",
+    "category" : "Laptop",
+    "productName": "MacBook Pro",
+    "price": "$1100 *includes tax",
+    "description": "Apple has introduced three new versions of its MacBook Pro line, \nincluding a 13-inch and 15-inch model with the Touch Bar, a thin, \nmulti-touch strip display that sits above the MacBook Pro's keyboard. ",
+    "name": "Nadiia",
+    "country": "United States",
+    "city":"Roselle",
+    "card": "0000",
+    "month": "1",
+    "year": "2222"
+  }
+  
