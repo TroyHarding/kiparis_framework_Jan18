@@ -2,8 +2,9 @@
 
 class demoblazeProduct {
   constructor() {
-    this.name = ".name";
-    this.price = ".price-container";
+    this.imageCarousel = ".#myCarousel-2";
+    this.productName = ".name";
+    this.productPrice = ".price-container";
     this.description = "#more-information > p";
     this.addToCart = ".btn.btn-success.btn-lg";
   }

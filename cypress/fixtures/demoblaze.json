@@ -1,7 +1,7 @@
 {
     "baseUrl": "https://www.demoblaze.com/",    
-    "username": "POR",
-    "password": "22Pass22",
+    "username": "Kiparis",
+    "password": "Cypress",
     "loginbutton": "#login2",
 
     "invalidUser": "billyRayCyrus",

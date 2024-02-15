@@ -149,3 +149,112 @@ Then(`I check the alert text is {string}`, (expectedText) => {
 Then(`I clear alert with xpath {string}`, (xpath) => {});
 //Hover
 Then(`I hover over elemt with xpath`, () => {});
+
+//####################  NEW STUFF for demoBElenaD.feature ###################################
+
+// Given(`I log in as a valid user to demoblaze`, () => {
+
+//   cy.fixture("demoblaze.json").then((data) => {
+//     cy.visit(data.baseUrl);
+//     cy.get("#login2").click(); //click login
+//     // cy.wait(1000);
+//     cy.get("#loginusername").type(data.username); //typein user name
+//     // cy.wait(1000);
+//     cy.get("#loginpassword").type(data.password); //typenin password
+//     // cy.wait(1000);
+//     cy.get("button[onclick='logIn()']").click();
+//     // cy.wait(1000);
+//   });
+// });
+
+// Then(`I verify header and footer is correct`, () => {
+//   // header
+//   cy.get("#nava").should("be.visible"); //logo
+//   cy.get("li[class='nav-item active'] a[class='nav-link']").should(
+//     "be.visible"
+//   ); //Home link
+//   cy.get("a[data-target='#exampleModal']").should("be.visible"); //COntact link
+//   cy.get("a[data-target='#videoModal']").should("be.visible"); //About us link
+//   cy.get("#cartur").should("be.visible"); //Cart link
+//   cy.get("#logout2").should("be.visible"); //Log out link
+//   cy.get("#nameofuser").should("be.visible"); //Welcome link
+
+//   //footer
+//   // cy.get("div[class='col-sm-4 col-lg-4 col-md-4'] b").should("be.visible"); //About us link   div[class='col-sm-4 col-lg-4 col-md-4'] b
+//   cy.get("div[class='col-sm-4 col-lg-4 col-md-4'] b")
+//     .contains("About Us")
+//     .should("exist");
+//   // cy.get("div[class='col-sm-3 col-lg-3 col-md-3'] b").should("be.visible"); //Get in Touch link  div[class='col-sm-3 col-lg-3 col-md-3'] b
+//   cy.get("div[class='col-sm-3 col-lg-3 col-md-3'] b")
+//     .contains("Get in Touch")
+//     .should("exist");
+// });
+
+// When(`I filter product for {string} category`, (category) => {
+//   switch (category) {
+//     case "Phones":
+//       cy.get("#itemc").contains("Phones").click();
+//       break;
+//     case "Laptops":
+//       cy.get("#itemc").contains("Laptops").click();
+//       break;
+//     case "Monitors":
+//       cy.get("#itemc").contains("Monitor").click();
+//       break;
+
+//     // default:
+//     //   throw new Error(
+//     //     "Wrong Device name was inputed:" + device + "is not valid"
+//     //   );
+//     //   break;
+//   }
+// });
+
+// Then(`I should see the product {string}`, () => {
+//   cy.get("#tbodyid").contains("MacBook Pro").should("exist");
+// });
+
+// Given(`I click and navigate to the "Macbook Pro" product page`, () => {
+//   cy.get(
+//     "body > div:nth-child(6) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > div:nth-child(2) > h4:nth-child(1) > a:nth-child(1)"
+//   ).click();
+//   cy.get(".name").contains("MacBook Pro").should("exist");
+// });
+
+// When(`I add the current item to cart from the product page`, () => {
+//   cy.get(".btn.btn-success.btn-lg").click();
+//   cy.window().then((win) => {
+//     cy.stub(win, "confirm").returns(true);
+//   });
+// });
+
+// When(`I navigate to the Cart page`, () => {
+//   cy.get("#cartur").click();
+// });
+
+// Then(`I verify the item {string} is present in the cart`, () => {
+//   cy.get("td:nth-child(2)").contains("MacBook Pro").should("exist");
+// });
+
+// When(
+//   `I click Place Order and fill out the Form with default information`,
+//   () => {
+//     cy.get(".btn.btn-success").click();
+//     cy.get("div[id='orderModal'] div[class='modal-content']").should(
+//       "be.visible"
+//     );
+
+//     cy.get("#name").type("test");
+//     cy.get("#country").type("test");
+//     cy.get("#city").type("test");
+//     cy.get("#card").type("test");
+
+//     cy.get("#month").type("test");
+//     cy.get("#year").type("test");
+//     cy.get("button[onclick='purchaseOrder()']").click();
+//   }
+// );
+
+// When(`I should see modal indicating a successful purchase`, () => {
+//   cy.get("sbody div:nth-child(11)").should("be.visible");
+// });
