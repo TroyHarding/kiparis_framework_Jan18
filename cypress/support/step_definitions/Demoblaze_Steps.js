@@ -6,6 +6,75 @@ import {
     And,
   } from "@badeball/cypress-cucumber-preprocessor";
   import "cypress-iframe";
+  import demoblazeHome from "../page-object/demoblazeHome_PO";
+  import demoblazeProduct from "../page-object/demoblazeProduct_PO";
+
+  Given(`I log in as a valid user to demoblaze`, () => {
+    const po = new demoblazeHome;
+    po.loginValid();
+});
+
+  
+  Then(`I verify header and footer is correct`, () => {
+    const po = new demoblazeHome;
+    po.headerFooterTest();
+  
+  });
+  
+  Then(`I should see the product {string}`, (selector) => {
+    cy.get("dfdf").should("be.visible");
+  });
+  
+  When(`I filter product for {string} category`, (product) => {
+    switch (product) {
+      case value:
+        "Laptop";
+        console.log("This is a laptop");
+        break;
+      case value:
+        "Phone";
+        console.log("This is a Phone");
+        break;
+      case value:
+        "Monitors";
+        console.log("This is a Minotr");
+        break;
+      default:
+        console.log("This Aint it");
+        break;
+    }
+  });
+  
+  Given(`dfdfdfdf`, (product) => {
+    switch (product) {
+      case value:
+        "Laptop";
+        console.log("This is a laptop");
+        break;
+      case value:
+        "Phone";
+        console.log("This is a Phone");
+        break;
+      case value:
+        "Monitors";
+        console.log("This is a Minotr");
+        break;
+      default:
+        console.log("This Aint it");
+        break;
+    }
+  });
+  
+  Given(`I open url {string}`, (arg0) => {
+    // [Given] Sets up the initial state of the system.
+  });
+  
+  Given(`new step`, () => {
+    const samsungProduct = new demoblazeProduct;
+    samsungProduct.verifyProduct();
+  });
+  
+
 
   Given(`I login to Demoblaze as a valid user`, () => {
     cy.fixture("demoblaze.json").then((data) => {
@@ -21,11 +90,7 @@ import {
 
 
   
-  Then(`I verify header and footer is correct`, () => {
-    cy.get("#logout2").should("be.visible");
-    cy.get("#nameofuser").contains("Welcome nadiiazhuk").should("exist");
-    cy.get("body div[id='footc'] div[id='fotcont'] div:nth-child(1) div:nth-child(1) div:nth-child(1)").contains("We believe performance needs to be validated at every stage of the software development cycle and our open source compatible, massively scalable platform makes that a reality.").should("exist");
-  });
+
   When(`I filter product for {string} category`, (product) => {
     //let product = cy.get("body > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(3)").click();
         switch (product) {
