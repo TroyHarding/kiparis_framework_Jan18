@@ -24,7 +24,6 @@ Given(`I ignore error`, () => {
     // errors, so we let them fail the test
   })
 });
-
 Given(`I resize window to {int} and {int}"`, (width, height) => {
   cy.viewport(width, height);
 });
@@ -53,6 +52,7 @@ Then(`element with selector {string} should be present`, (selector) => {
 });
 
 Then(`element with xpath {string} should NOT be present`, (selector) => {});
+Then(`element with selector {string} should NOT be present`, (selector) => {});
 
 Then(`I wait for element with selector {string} to be present`, (selector) => {
   cy.get(selector).should("be.visible");
