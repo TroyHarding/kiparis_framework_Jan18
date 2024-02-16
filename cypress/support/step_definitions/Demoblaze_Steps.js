@@ -56,47 +56,19 @@ Given('I login to Demoblaze as a valid user', () => {
   pl.loginValid();
 }
 )
-// Then ("I click and navigate to the {string} product page", () => {
-//   cy.get("div#tbodyid>div>div>a[href*='=15']").click();
-//   cy.get("body").contains("MacBook Pro").should("exist");
-// });
 
 Then('I click and navigate to the {string} product page', (laptop) => {
-  cy.log("DFdfdfdfdfd");
-  switch (laptop) {
-    case 'Sony vaio i5':
-      cy.log("This is a Sony vaio i5");
-      cy.get("div.card-block>h4").contains('Sony vaio i5').click();
-      break;
-    case 'Sony vaio i7':
-      cy.log("This is a Sony vaio i7");
-      cy.get("div.card-block>h4").contains('Sony vaio i7').click();
-      break;
-    case 'MacBook air':
-      cy.log("This is a MacBook air");
-      cy.get("div.card-block>h4").contains('MacBook air').click();
-      break;
-    case 'MacBook Pro':
-      cy.log("This is a MacBook Pro");
-      cy.get("div.card-block>h4").contains('MacBook Pro').click();
-      break;
-    case '2017 Dell 15.6 Inch':
-      cy.log("This is a 2017 Dell 15.6 Inch");
-      cy.get("div.card-block>h4").contains('2017 Dell 15.6 Inch').click();
-      break;
-    case 'Dell i7 8gb':
-      cy.log("This is a Dell i7 8gb");
-      cy.get("div.card-block>h4").contains('Dell i7 8gb').click();
-      break;
-    default:
-      cy.log("This Ain't it");
-      break;
-  }
-});
+      const selectP = new demoblazeHome();
+      selectP.selectProduct(laptop);
+
+})
+  
+
 
 When ('I add the current item to cart from the product page', () => {
-  const ct = new demoblazeProduct();
-  ct.addToCart();
+   const ac = new demoblazeProduct();
+   ac.addToCart();
+  
   
 })
   
