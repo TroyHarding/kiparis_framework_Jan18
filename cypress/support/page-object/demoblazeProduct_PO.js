@@ -10,9 +10,10 @@ class demoblazeProduct {
 
   verifyProduct() {
     cy.fixture("demoblaze.json").then((data) => {
-        cy.visit("https://www.demoblaze.com/prod.html?idp_=1");
+     cy.visit("https://www.demoblaze.com/prod.html?idp_=1");
       cy.get(this.name).should("have.text", data.product);
       cy.get(this.price).should("have.text", data.price);
+      cy.get(this.addToCart).click();
       //TODO not working
       //cy.get(this.description).should("have.text", data.description);
     });
@@ -20,6 +21,7 @@ class demoblazeProduct {
 
   addToCart() {
     cy.get(this.addToCart).click();
+    
   }
 }
 

@@ -3,13 +3,17 @@
     "username": "POR",
     "password": "22Pass22",
     "loginbutton": "#login2",
+    
 
     "invalidUser": "billyRayCyrus",
     "invalidPassword": "password2",
 
     "product": "Samsung galaxy s6",
+    "cartProduct": "Samsung galaxy s6360Delete",
     "price": "$360 *includes tax",
-    "description": "The Samsung Galaxy S6 is powered by 1.5GHz octa-core Samsung Exynos 7420 processor and it comes with 3GB of RAM. The phone packs 32GB of internal storage cannot be expanded.    "
+    "totalPrice": "360",
+    "description": "The Samsung Galaxy S6 is powered by 1.5GHz octa-core Samsung Exynos 7420 processor and it comes with 3GB of RAM. The phone packs 32GB of internal storage cannot be expanded.    ",
+    "headerText" : "Home Cart",
+    "footerText" : "About us Get in Touch"
   
 }
-  
