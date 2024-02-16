@@ -9,20 +9,20 @@ import "cypress-iframe";
 import "cypress-iframe";
 
 Given(`I open url {string}`, (url) => {
-    cy.visit(url);
+  cy.visit(url);
 });
 
 Given(`I ignore error`, () => {
-  cy.on('uncaught:exception', (err, runnable, promise) => {
+  cy.on("uncaught:exception", (err, runnable, promise) => {
     // when the exception originated from an unhandled promise
     // rejection, the promise is provided as a third argument
     // you can turn off failing the test in this case
     if (promise) {
-      return false
+      return false;
     }
     // we still want to ensure there are no other unexpected
     // errors, so we let them fail the test
-  })
+  });
 });
 Given(`I resize window to {int} and {int}"`, (width, height) => {
   cy.viewport(width, height);
@@ -58,7 +58,8 @@ Then(`I wait for element with selector {string} to be present`, (selector) => {
   cy.get(selector).should("be.visible");
 });
 
-Then(`I wait for element with selector {string} to NOT be present`,
+Then(
+  `I wait for element with selector {string} to NOT be present`,
   (selector) => {
     cy.get(selector).should("not.be.visible");
   }
@@ -187,24 +188,23 @@ Then(`I swith to first tab`, () => {});
 //Accpets Any alerts
 Then(`I accept alert`, () => {
   cy.window().then((win) => {
-    cy.stub(win, 'confirm').returns(true);
+    cy.stub(win, "confirm").returns(true);
   });
 });
 
 //Dismiss Alert
 Then(`I dismiss alert`, () => {
-  cy.on('window:alert', (text) => {  
+  cy.on("window:alert", (text) => {
     return false;
   });
 });
 
 //Check for text alert
 Then(`I check the alert text is {string}`, (expectedText) => {
-  cy.on('window:alert', (expectedText) => {
+  cy.on("window:alert", (expectedText) => {
     expect(expectedText).to.equal(expectedText);
   });
 });
-
 
 Then(`I clear alert with xpath {string}`, (xpath) => {});
 //Hover
