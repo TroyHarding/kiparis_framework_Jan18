@@ -55,10 +55,43 @@ class demoblazeHome {
           break;
           
       }
-      // cy.get("#tbodyid").contains("MacBook Pro").should("exist");
+       cy.get("#tbodyid").contains("MacBook Pro").should("exist");
       
     }
+    selectProduct(laptop){
+      switch (laptop) {
+        case 'Sony vaio i5':
+          cy.log("This is a Sony vaio i5");
+          cy.get("div.card-block>h4").contains('Sony vaio i5').click();
+          break;
+        case 'Sony vaio i7':
+          cy.log("This is a Sony vaio i7");
+          cy.get("div.card-block>h4").contains('Sony vaio i7').click();
+          break;
+        case 'MacBook air':
+          cy.log("This is a MacBook air");
+          cy.get("div.card-block>h4").contains('MacBook air').click();
+          break;
+        case 'MacBook Pro':
+          cy.log("This is a MacBook Pro");
+          cy.get("div.card-block>h4").contains('MacBook Pro').click();
+          break;
+        case '2017 Dell 15.6 Inch':
+          cy.log("This is a 2017 Dell 15.6 Inch");
+          cy.get("div.card-block>h4").contains('2017 Dell 15.6 Inch').click();
+          break;
+        case 'Dell i7 8gb':
+          cy.log("This is a Dell i7 8gb");
+          cy.get("div.card-block>h4").contains('Dell i7 8gb').click();
+          break;
+        default:
+          cy.log("This Ain't it");
+          break;
+      }
+    }
   }
+    
+  
   
   export default demoblazeHome;
   
