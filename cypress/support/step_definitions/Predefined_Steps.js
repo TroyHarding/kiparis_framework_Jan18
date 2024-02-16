@@ -23,7 +23,6 @@ Given(`I ignore error`, () => {
     // errors, so we let them fail the test
   });
 });
-
 Given(`I resize window to {int} and {int}"`, (width, height) => {
   cy.viewport(width, height);
 });
@@ -52,6 +51,7 @@ Then(`element with selector {string} should be present`, (selector) => {
 });
 
 Then(`element with xpath {string} should NOT be present`, (selector) => {});
+Then(`element with selector {string} should NOT be present`, (selector) => {});
 
 Then(`I wait for element with selector {string} to be present`, (selector) => {
   cy.get(selector).should("be.visible");
@@ -150,6 +150,7 @@ Then(`I clear alert with xpath {string}`, (xpath) => {});
 //Hover
 Then(`I hover over elemt with xpath`, () => {});
 
+
 // // NEW STUFF
 
 // Given(`I log in as a valid user to demoblaze`, () => {
@@ -237,4 +238,6 @@ Then(`I hover over elemt with xpath`, () => {});
 
 // Then(`I should see modal indicating a successful purchase`, () => {
 //   cy.get(".sweet-alert.showSweetAlert.visible").should("exist");
-// });
+
+
+
