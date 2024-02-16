@@ -5,7 +5,7 @@ Feature: Demoblaze site
     @demo1
     Scenario: Valid Login
      
-     Given I log in as a valid user  
+     Given I log in as a valid user
     
     # # Check header (Logo, Buttons)  Check Footer, check footer element, and check text
     # Then I verify header and footer is correct
