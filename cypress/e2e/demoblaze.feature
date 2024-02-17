@@ -10,7 +10,7 @@ Feature: Demoblaze site
         Then I click and navigate to the "MacBook Pro" product page
         When I add the current item to cart from the product page
         When I navigate to the Cart page
-        # Then I verify the item "MacBook Pro" is present in the cart
+         Then I verify the item "MacBook Pro" is present in the cart
         When I click Place Order and fill out the Form with default information
         Then I should see modal indicating a successful purchas
 
@@ -42,7 +42,7 @@ Feature: Demoblaze site
         Then element with selector ".lead.text-muted" should contain text "360 USD"
 
 
-    @demo32:
+    @demo3:
     Scenario: Delete Item
         Given I open url "https://www.demoblaze.com/"
         Then I click on element with selector "#login2"
