@@ -69,9 +69,6 @@ Given(`dfdfdfdf`, (product) => {
   }
 });
 
-Given(`I open url {string}`, (arg0) => {
-  // [Given] Sets up the initial state of the system.
-});
 
 Given(`new step`, () => {
   const samsungProduct = new demoblazeProduct;
