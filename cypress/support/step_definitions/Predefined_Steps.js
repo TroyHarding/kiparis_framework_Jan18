@@ -8,9 +8,9 @@ import {
 import "cypress-iframe";
 import "cypress-iframe";
 
-// Given(`I open url {string}`, (url) => {
-//   cy.visit(url);
-// });
+Given(`I open url {string}`, (url) => {
+ cy.visit(url);
+ });
 
 Given(`I ignore error`, () => {
   cy.on("uncaught:exception", (err, runnable, promise) => {

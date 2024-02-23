@@ -5,8 +5,9 @@ import {
   And,
 } from "@badeball/cypress-cucumber-preprocessor";
 import "cypress-iframe";
-import demoblazeHome_PO from "../page-object/demoblazeHome_PO";
-import demoblazeCart_PO from "../page-object/demoblazeCart_PO";
+import demoblazeHome from "../page-object/demoblazeHome_PO_Leo";
+import demoblazeCart from "../page-object/demoblazeCart_PO_Leo";
+import demoblazeProduct from "../page-object/demoblazeProduct_PO_Leo";
 
 // NEW STUFF
 
