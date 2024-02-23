@@ -118,12 +118,12 @@ Then(
   }
 );
 
-Then(
-  `element with selector {string} should contain text {string}`,
-  (selector, text) => {
-    cy.get(selector).contains(text).should("exist");
-  }
-);
+// Then(
+//   `element with selector {string} should contain text {string}`,
+//   (selector, text) => {
+//     cy.get(selector).contains(text).should("exist");
+//   }
+// );
 
 Then(
   `element with xpath {string} should NOT contain text {string}`,
@@ -140,19 +140,19 @@ Then(
   }
 );
 
-Then(
-  `the product details in element with selector {string} should contain text {string}`,
-  (selector, text) => {
-    cy.get(selector).contains(text).should("exist");
-  }
-);
+// Then(
+//   `the product details in element with selector {string} should contain text {string}`,
+//   (selector, text) => {
+//     cy.get(selector).contains(text).should("exist");
+//   }
+// );
 
-Then(
-  `element with selector {string} should contain text {string}`,
-  (selector, text) => {
-    cy.get(selector).contains(text).should("exist");
-  }
-);
+// Then(
+//   `element with selector {string} should contain text {string}`,
+//   (selector, text) => {
+//     cy.get(selector).contains(text).should("exist");
+//   }
+// );
 
 Then(
   `element with xpath {string} should NOT contain text {string}`,
