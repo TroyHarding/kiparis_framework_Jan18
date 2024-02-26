@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 import {
   Given,
   When,
@@ -5,8 +6,10 @@ import {
   And,
 } from "@badeball/cypress-cucumber-preprocessor";
 import "cypress-iframe";
+
 import demoblazeHome_PO from "../page-object/demoblazeHome_PO";
 import demoblazeCart_PO from "../page-object/demoblazeCart_PO";
+import demoblazeProduct from "../page-object/demoblazeProduct_PO";
 
 // NEW STUFF
 
@@ -99,11 +102,11 @@ Then(`I should see modal indicating a successful purchase`, () => {
   cy.get(".sweet-alert.showSweetAlert.visible").should("exist");
 });
 
-// When(`I do stuff`, () => {
-//   const po = demoblazeHome_PO;
-//   po.loginValid();
-// });
-// Then(`I place order`, () => {
-//   const cart = new demoblazeCart_PO;
-//   cart.placeOrder();
-// });
+When(`I do stuff`, () => {
+  const po = demoblazeHome_PO;
+  po.loginValid();
+});
+Then(`I place order`, () => {
+  const cart = new demoblazeCart_PO;
+  cart.placeOrder();
+});

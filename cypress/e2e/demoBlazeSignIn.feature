@@ -1,4 +1,4 @@
-@Demoblaze
+@demob @demobsignin
 Feature: Demo Blaze PO abd P1 Manual Cases
 
   @demob1: 
@@ -32,6 +32,7 @@ Feature: Demo Blaze PO abd P1 Manual Cases
   Then I click on element with selector "body > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(3)"
   Then element with selector ":nth-child(3) > .card > .card-block > .card-title > .hrefch" should be present
  
+
  @demob4: 
   Scenario:Valid Sign In 1.3 Product Page verification 
   Given I open url "https://www.demoblaze.com/"
