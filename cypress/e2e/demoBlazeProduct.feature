@@ -1,7 +1,7 @@
-@demob
+@demob @demobproduct
 Feature: DemoBlaze
 
-    @demob_product_page_phone
+    @demobproduct1
     Scenario: Product Page Samsung
 
         Given I open url "https://demoblaze.com/"
@@ -14,7 +14,7 @@ Feature: DemoBlaze
         Then I click on element with selector "a#cartur"
         Then the product details in element with selector "div.col-lg-8" should contain text "Samsung galaxy s6"
 
-    @demob_product_page_notebook
+    @demobproduct2
     Scenario: Product Page MacBook
 
         Given I open url "https://demoblaze.com/"
@@ -27,7 +27,7 @@ Feature: DemoBlaze
         Then I click on element with selector "a#cartur"
         Then the product details in element with selector "div.col-lg-8" should contain text "MacBook air"
 
-    @demob_product_page_monitor
+    @demobproduct3
     Scenario: Product Page ASUS Full HD
 
         Given I open url "https://demoblaze.com/"
