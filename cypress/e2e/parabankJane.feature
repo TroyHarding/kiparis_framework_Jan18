@@ -17,6 +17,8 @@ Then I verify my account has been created
 
 @para2 @paraJane2
 Scenario: Open new account
+Given I log in to parabank
+When I click open new account button
 
 
 

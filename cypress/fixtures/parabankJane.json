@@ -10,9 +10,11 @@
   "phone": "input[id='customer.phoneNumber']",
   "ssn": "input[id='customer.ssn']",
   "userName": "input[id='customer.username']",
-  "password": "input[id='customer.password']",
+  "password": "input[name='customer.password']",  
   "confirmPassword": "#repeatedPassword",
   "registerForm": "input[value='Register']",
+  "SucsessInfo": "div[id='rightPanel']",
+
 
   "registerUser": {
     "firstName": "J",
@@ -25,6 +27,8 @@
     "ssn": "4658435'",
     "userName": "J",
     "password": "123",
-    "confirmPassword": "123"
+    "confirmPassword": "123",
+    "SucsessInfo": "Your account was created successfully"
+
   }
 }

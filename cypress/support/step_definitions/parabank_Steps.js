@@ -33,12 +33,22 @@ When(`I fill out all of the required registration fields`, () => {
   cy.get(data.phone).type(data.registerUser.phone);
   cy.get(data.ssn).type(data.registerUser.ssn);
   cy.get(data.userName).type(data.registerUser.userName);
-  cy.get(data.passwprd).type(data.registerUser.password);
-  cy.get(data.confirmPassword).(data.registerUser.confirmPassword);
-  cy.get(data.registerForm).click();
-  })
+  cy.get(data.password).type(data.registerUser.password);
+  cy.get(data.confirmPassword).type(data.registerUser.confirmPassword);
+    })
 });
 
-When(`I click the register button to complete sign up`, () => {});
+When(`I click the register button to complete sign up`, () => {
+cy.fixture("parabankJane.json").then((data) =>{
+cy.get(data.registerForm).click();
 
-Then(`I verify my account has been created`, () => {});
+})
+});
+
+Then(`I verify my account has been created`, () => {
+  cy.fixture("parabankJane.json").then((data) =>{
+    cy.get(data.SucsessInfo).contains(data.registerUser.SucsessInfo).should("exist")
+
+
+  })
+});
