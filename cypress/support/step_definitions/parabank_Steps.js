@@ -7,7 +7,8 @@ import {
 } from "@badeball/cypress-cucumber-preprocessor";
 import "cypress-iframe";
 import "cypress-iframe";
-import parabank from "../page-object/parabank_PO";
+
+import parabank_PO from "../page-object/parabank_PO";
 
 Given(`I navigate to default parabank page`, () => {
   cy.fixture("parabankJane.json").then((data) => {
@@ -52,3 +53,9 @@ Then(`I verify my account has been created`, () => {
 
   })
 });
+
+Given(`I log in to parabank`, () => {
+  const po = parabank_PO;
+  po.login();
+     });
+

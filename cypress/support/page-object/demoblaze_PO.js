@@ -2,7 +2,7 @@
 
 class demoblaze_PO {
   constructor() {
-    this.loginButton = "#login2"
+    this.loginButton = "#login2";
     this.usernameInput = "#loginusername";
     this.passwordInput = "#loginpassword";
     this.loginButtonModal = "button[onclick='logIn()']"
