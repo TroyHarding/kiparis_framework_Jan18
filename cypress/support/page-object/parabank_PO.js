@@ -7,5 +7,4 @@ class parabank {
 
     }
 }
-
 export default parabank
