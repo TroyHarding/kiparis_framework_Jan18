@@ -13,4 +13,8 @@
             lg.logIn();
       })
 
+      Then ('I open new Account', () =>{
+            
+      })
+
 

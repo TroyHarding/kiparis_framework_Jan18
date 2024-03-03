@@ -5,6 +5,11 @@
     "logInButton":"input[value='Log In']",
     "validUser":{
         "userName":"yhp",
-        "password":"osprey"
-    }
+        "password":"osprey",
+        "firstName":"Yuliia",
+        "lastName":"Haponenko"
+    },
+    "leftMenu":".leftmenu",
+    "accountName":".smallText",
+    "leftPanel":"#leftPanel"
 }
