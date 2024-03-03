@@ -8,6 +8,6 @@ class HomePage{
         }
         )
     }
-}c
+}
 
 export default HomePage;
