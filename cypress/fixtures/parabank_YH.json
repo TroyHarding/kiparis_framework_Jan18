@@ -1,5 +1,5 @@
 {
-    "baseUrl":"https://parabank.parasoft.com/ç",   
+    "baseUrl":"https://parabank.parasoft.com/",   
     "userNameField":"input[name='username']",
     "passwordField":"input[name='password']",
     "logInButton":"input[value='Log In']",
@@ -12,5 +12,9 @@
     "leftMenu":".leftmenu",
     "accountName":".smallText",
     "leftPanel":"#leftPanel",
-    "openAccountButton":"a[href='/parabank/openaccount.htm']"
+    "openAccountButton":"a[href='/parabank/openaccount.htm']",
+    "formForNewAcccount":".ng-scope[ng-app='AddAccountApp']",
+    "accountType":"#type",
+    "checking":"#type > option[value='0']",
+    "saving":"#type > option[value='1']"
 }

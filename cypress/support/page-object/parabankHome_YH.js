@@ -5,7 +5,7 @@ class HomePage{
           cy.get(data.userNameField).type(data.validUser.userName);  
           cy.get(data.passwordField).type(data.validUser.password);  
           cy.get(data.logInButton).click();
-          cy.get()
+          
         }
         )
     }
@@ -33,9 +33,21 @@ class HomePage{
       })
     }
 
-    openAccount(){
+    openAccount(accountType){
+      cy.fixture("parabank_YH.json").then((data) =>{
+      cy.get(data.openAccountButton).click();
+      cy.get(data.formForNewAcccount).should("exist");
+      cy.get('select').select("option[value='0']").should('have.value', '0')
+      // cy.get(data.accountType).click();
+      // if(accountType == "CHECKING"){
+      //    cy.get(data.checking).click();
+      // }else{
+      //     cy.get(data.saving).click();
+      
 
-    }
+      
+    })
+  }
+
 }
-
 export default HomePage;
