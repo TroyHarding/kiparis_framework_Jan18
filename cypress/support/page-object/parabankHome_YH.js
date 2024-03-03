@@ -33,7 +33,6 @@ class HomePage{
       })
     }
 
-
     openAccount(){
 
     }
