@@ -1,0 +1,10 @@
+{
+    "baseUrl":"https://parabank.parasoft.com/ç",   
+    "userNameField":"input[name='username']",
+    "passwordField":"input[name='password']",
+    "logInButton":"input[value='Log In']",
+    "validUser":{
+        "userName":"yhp",
+        "password":"osprey"
+    }
+}
