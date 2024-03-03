@@ -11,5 +11,6 @@
     },
     "leftMenu":".leftmenu",
     "accountName":".smallText",
-    "leftPanel":"#leftPanel"
+    "leftPanel":"#leftPanel",
+    "openAccountButton":"a[href='/parabank/openaccount.htm']"
 }
