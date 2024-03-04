@@ -33,25 +33,18 @@ class HomePage{
       })
     }
 
-    openAccount(accountType){
+    openAccount(account){
       cy.fixture("parabank_YH.json").then((data) =>{
       cy.get(data.openAccountButton).click();
       cy.get(data.formForNewAcccount).should("exist");
-      cy.get("select#type").invoke("val", "1").trigger("change");
-
-      
-      // cy.get('select').each((accountType) => {
-      //   // Perform actions on each select element
-      //   cy.wrap(accountType).select('option');
-      // });
-      // // cy.get('select').select("option[value='0']").should('have.value', '0')
-      // cy.get(data.accountType).click();
-      // if(accountType == "CHECKING"){
-      //    cy.get(data.checking).click();
-      // }else{
-      //     cy.get(data.saving).click();
-      
-
+      switch (account) {
+        case "CHECKING":
+          cy.get(data.accountType).invoke("val", "1").trigger("change");
+          break;
+        case "SAVINGS":
+          cy.get("select#type").invoke("val", "0").trigger("change");
+          break;
+      }
       
     })
   }

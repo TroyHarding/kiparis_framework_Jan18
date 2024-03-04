@@ -15,7 +15,7 @@
             lg.verifyLeftMenu();
       })
 
-      Then ('I open new {string} Account', (accountType) => {
+      Then ('I open new {string} Account', (account) => {
             let open = new parabankHome_YH();
             open.openAccount();          
       })
