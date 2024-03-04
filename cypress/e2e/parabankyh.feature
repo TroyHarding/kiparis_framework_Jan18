@@ -16,7 +16,7 @@ Feature: ParaBank
       @para2 @paraYuliiaH2
     Scenario: Open New Account
     Given I log in to parabank with valid Account
-    Then I open new "CHEKING" Account
+    Then I open new "CHECKING" Account
     Then verify new acount created
 
 
