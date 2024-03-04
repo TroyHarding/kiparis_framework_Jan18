@@ -15,7 +15,9 @@ cy.fixture("parabank_sneha.json").then((data) => {
 });
 });
 When('I click the Register button', ()=>{
-
+cy.fixture("parabank_sneha.json").then((data)=>{
+    cy.get(data.registerHome).click();
+});
 });
 When('I fill out all of the required registration details', ()=>{
 
