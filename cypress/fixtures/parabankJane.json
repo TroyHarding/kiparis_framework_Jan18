@@ -21,7 +21,8 @@
   "OpenAccountSubmit": "input[value='Open New Account']",
   "TransferHomePage": "a[href='/parabank/transfer.htm']",
   "Amount": "#amount",
-  "TransferButton": "input[value='Transfer']"
+  "TransferButton": "input[value='Transfer']",
+  "TransferComplete": ".ng-scope[ng-app='TransferApp']",
 
 
 

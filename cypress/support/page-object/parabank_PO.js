@@ -15,7 +15,7 @@ this.loginButton = "input[type='submit']";
             cy.visit(data.BaseUrl);
             cy.get(userName).type(data.registerUser.userName);
             cy.get(password).type(data.registerUser.password);
-            cy.get(this.loginButton).click();
+            cy.get(loginButton).click();
 
 
     });
