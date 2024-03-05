@@ -8,22 +8,21 @@ import {
 import "cypress-iframe";
 
 Given(`I open url {string}`, (url) => {
-    cy.visit(url);
+  cy.visit(url);
 });
 
 Given(`I ignore error`, () => {
-  cy.on('uncaught:exception', (err, runnable, promise) => {
+  cy.on("uncaught:exception", (err, runnable, promise) => {
     // when the exception originated from an unhandled promise
     // rejection, the promise is provided as a third argument
     // you can turn off failing the test in this case
     if (promise) {
-      return false
+      return false;
     }
     // we still want to ensure there are no other unexpected
     // errors, so we let them fail the test
-  })
+  });
 });
-
 Given(`I resize window to {int} and {int}"`, (width, height) => {
   cy.viewport(width, height);
 });
@@ -52,12 +51,14 @@ Then(`element with selector {string} should be present`, (selector) => {
 });
 
 Then(`element with xpath {string} should NOT be present`, (selector) => {});
+Then(`element with selector {string} should NOT be present`, (selector) => {});
 
 Then(`I wait for element with selector {string} to be present`, (selector) => {
   cy.get(selector).should("be.visible");
 });
 
-Then(`I wait for element with selector {string} to NOT be present`,
+Then(
+  `I wait for element with selector {string} to NOT be present`,
   (selector) => {
     cy.get(selector).should("not.be.visible");
   }
@@ -106,12 +107,45 @@ Then(
 
 Given(`I verify iframe with selector {string} has loaded`, (selector) => {
   cy.frameLoaded("#Your project: 'Test Project'");
+  cy.frameLoaded("#Your project: 'Test Project'");
 });
 
 Then(
   `I search within iframe {string} with a selector {string} to find text {string}`,
   (ifrmae, selector, text) => {
     cy.iframe(ifrmae).find(selector).should("eq", text);
+  }
+);
+
+
+Then(
+  `element with xpath {string} should NOT contain text {string}`,
+  (selector, text) => {
+    cy.get(selector).contains(text).should("not.exist");
+  }
+);
+
+Then(
+  `element with selector {string} should contain text {string} and should NOT contain text {string}`,
+  (selector, text, text2) => {
+    cy.get(selector).contains(text).should("exist");
+    cy.get(selector).contains(text2).should("not.exist");
+  }
+);
+
+
+Then(
+  `element with xpath {string} should NOT contain text {string}`,
+  (selector, text) => {
+    cy.get(selector).contains(text).should("not.exist");
+  }
+);
+
+
+Then(
+  `the product details in element with selector {string} should contain text {string}`,
+  (selector, text) => {
+    cy.get(selector).contains(text).should("exist");
   }
 );
 
@@ -127,134 +161,220 @@ Then(`I swith to first tab`, () => {});
 //Accpets Any alerts
 Then(`I accept alert`, () => {
   cy.window().then((win) => {
-    cy.stub(win, 'confirm').returns(true);
+    cy.stub(win, "confirm").returns(true);
   });
 });
 
 //Dismiss Alert
 Then(`I dismiss alert`, () => {
-  cy.on('window:alert', (text) => {  
+  cy.on("window:alert", (text) => {
     return false;
   });
 });
 
 //Check for text alert
 Then(`I check the alert text is {string}`, (expectedText) => {
-  cy.on('window:alert', (expectedText) => {
+  cy.on("window:alert", (expectedText) => {
     expect(expectedText).to.equal(expectedText);
   });
 });
-
 
 Then(`I clear alert with xpath {string}`, (xpath) => {});
 //Hover
 Then(`I hover over elemt with xpath`, () => {});
 
-//####################  NEW STUFF for demoBElenaD.feature ###################################
+// Given(`I log in as a valid user to demoblaze`, () => {
+//   cy.visit("https://www.demoblaze.com");
+//   cy.get("#login2").click();
+// });
+
+When(`I filter product for {string} category`, (product) => {
+  console.log("category:", product);
+  switch (product) {
+    case "Laptops":
+      cy.get("a[onclick*='notebook']").click();
+      cy.get("#tbodyid").contains("MacBook Pro").should("exist");
+      cy.get("#tbodyid").contains("Sony vaio i7").should("exist");
+      break;
+    case "Phones":
+      cy.get("a[onclick*='Phones']").click();
+      cy.get("#tbodyid").contains("Samsung galaxy s6").should("exist");
+      cy.get("#tbodyid").contains("Nexus 6").should("exist");
+      break;
+    case "Monitors":
+      cy.get("a[onclick*='Monitors']").click();
+      cy.get("#tbodyid").contains("Apple monitor 24").should("exist");
+      cy.get("#tbodyid").contains("ASUS Full HD").should("exist");
+      break;
+    default:
+      console.log("This Aint it");
+      break;
+  }
+});
+Given(`I log in as a valid user to demoblaze`, () => {
+  cy.fixture("demoblaze.json").then((data) => {
+    cy.visit(data.baseUrl);
+    //Click Login
+    cy.get(data.loginbutton).click();
+    //Type username
+    cy.get("#loginusername").type(data.username);
+    //Type password
+    cy.get("#loginpassword").type(data.password).wait(1000);
+    //Click login
+    cy.get(data.loginbutton2).click();
+  });
+});
+Then("I verify header and footer is correct", () => {
+  // cy.get("a[id='login2']").click();
+  // cy.get("input[id='loginusername']").type("User599").wait(1000);
+  // cy.get("input[id='loginpassword']").type("PassTestNew");
+  // cy.get("button[onclick='logIn()']").click();
+  cy.get("a[href='index.html']").should("exist");
+  cy.get("a[data-target='#exampleModal']").should("exist");
+  cy.get("a[data-target='#videoModal']").should("exist");
+  cy.get("a[id='cartur']").should("exist");
+  cy.get("a[id='logout2']").should("exist");
+  cy.get("a[id='nameofuser']").should("exist");
+  cy.get("h4[class='grrrr']").contains("About Us").should("exist");
+  cy.get("h4[class='grrrr']").contains("Get in Touch").should("exist");
+});
+
+Given("I click and navigate to the {string} product page", (product) => {
+  switch (product) {
+    case "MacBook air":
+      cy.get("a[onclick*='notebook']").click();
+      cy.wait(5000);
+      cy.get("a[href='prod.html?idp_=11']").contains('MacBook air').click();
+      cy.get("#tbodyid").contains("MacBook air").should("exist");
+      break;
+    case "MacBook Pro":
+      cy.get("a[onclick*='notebook']").click();
+      cy.get("a[class='hrefch']").contains('MacBook Pro').click();
+      cy.get("#tbodyid").contains("MacBook Pro").should("exist");
+      break;
+    default:
+      console.log("This Aint it");
+      break;
+  }
+});
+
+
+
+When(`I add the current item to cart from the product page`, () => {
+  cy.contains("a.btn.btn-success.btn-lg", "Add to cart").click();
+  cy.get("a[id='cartur']").click();
+  cy.get("#tbodyid").contains("MacBook Pro").should("exist");
+});
+
+When(
+  `I click Place Order and fill out the Form with default information`,
+  () => {
+    cy.get("button[data-target='#orderModal']").click();
+    cy.get("input[id='name']").type("John Smith");
+    cy.get("input[id='country']").type("USA");
+    cy.get("input[id='city']").type("West Hills, CA");
+    cy.get("input[id='card']").type("2233 4455 6677 8899");
+    cy.get("input[id='month']").type("12");
+    cy.get("input[id='year']").type("2028");
+    cy.get("button[onclick='purchaseOrder()']").click();
+    cy.get("h2:contains('Thank you for your purchase!')").should("exist");
+  }
+);
 
 // Given(`I log in as a valid user to demoblaze`, () => {
-
-//   cy.fixture("demoblaze.json").then((data) => {
-//     cy.visit(data.baseUrl);
-//     cy.get("#login2").click(); //click login
-//     // cy.wait(1000);
-//     cy.get("#loginusername").type(data.username); //typein user name
-//     // cy.wait(1000);
-//     cy.get("#loginpassword").type(data.password); //typenin password
-//     // cy.wait(1000);
-//     cy.get("button[onclick='logIn()']").click();
-//     // cy.wait(1000);
-//   });
+//   cy.visit("https://www.demoblaze.com");
+//   cy.get("#login2").click();
 // });
 
-// Then(`I verify header and footer is correct`, () => {
-//   // header
-//   cy.get("#nava").should("be.visible"); //logo
-//   cy.get("li[class='nav-item active'] a[class='nav-link']").should(
-//     "be.visible"
-//   ); //Home link
-//   cy.get("a[data-target='#exampleModal']").should("be.visible"); //COntact link
-//   cy.get("a[data-target='#videoModal']").should("be.visible"); //About us link
-//   cy.get("#cartur").should("be.visible"); //Cart link
-//   cy.get("#logout2").should("be.visible"); //Log out link
-//   cy.get("#nameofuser").should("be.visible"); //Welcome link
+When(`I filter product for {string} category`, (product) => {
+  console.log("category:", product);
+  switch (product) {
+    case "Laptops":
+      cy.get("a[onclick*='notebook']").click();
+      cy.get("#tbodyid").contains("MacBook Pro").should("exist");
+      cy.get("#tbodyid").contains("Sony vaio i7").should("exist");
+      break;
+    case "Phones":
+      cy.get("a[onclick*='Phones']").click();
+      cy.get("#tbodyid").contains("Samsung galaxy s6").should("exist");
+      cy.get("#tbodyid").contains("Nexus 6").should("exist");
+      break;
+    case "Monitors":
+      cy.get("a[onclick*='Monitors']").click();
+      cy.get("#tbodyid").contains("Apple monitor 24").should("exist");
+      cy.get("#tbodyid").contains("ASUS Full HD").should("exist");
+      break;
+    default:
+      console.log("This Aint it");
+      break;
+  }
+});
+Given(`I log in as a valid user to demoblaze`, () => {
+  cy.fixture("demoblaze.json").then((data) => {
+    cy.visit(data.baseUrl);
+    //Click Login
+    cy.get(data.loginbutton).click();
+    //Type username
+    cy.get("#loginusername").type(data.username);
+    //Type password
+    cy.get("#loginpassword").type(data.password).wait(1000);
+    //Click login
+    cy.get(data.loginbutton2).click();
+  });
+});
+Then("I verify header and footer is correct", () => {
+  // cy.get("a[id='login2']").click();
+  // cy.get("input[id='loginusername']").type("User599").wait(1000);
+  // cy.get("input[id='loginpassword']").type("PassTestNew");
+  // cy.get("button[onclick='logIn()']").click();
+  cy.get("a[href='index.html']").should("exist");
+  cy.get("a[data-target='#exampleModal']").should("exist");
+  cy.get("a[data-target='#videoModal']").should("exist");
+  cy.get("a[id='cartur']").should("exist");
+  cy.get("a[id='logout2']").should("exist");
+  cy.get("a[id='nameofuser']").should("exist");
+  cy.get("h4[class='grrrr']").contains("About Us").should("exist");
+  cy.get("h4[class='grrrr']").contains("Get in Touch").should("exist");
+});
 
-//   //footer
-//   // cy.get("div[class='col-sm-4 col-lg-4 col-md-4'] b").should("be.visible"); //About us link   div[class='col-sm-4 col-lg-4 col-md-4'] b
-//   cy.get("div[class='col-sm-4 col-lg-4 col-md-4'] b")
-//     .contains("About Us")
-//     .should("exist");
-//   // cy.get("div[class='col-sm-3 col-lg-3 col-md-3'] b").should("be.visible"); //Get in Touch link  div[class='col-sm-3 col-lg-3 col-md-3'] b
-//   cy.get("div[class='col-sm-3 col-lg-3 col-md-3'] b")
-//     .contains("Get in Touch")
-//     .should("exist");
-// });
+Given("I click and navigate to the {string} product page", (product) => {
+  switch (product) {
+    case "MacBook air":
+      cy.get("a[onclick*='notebook']").click();
+      cy.wait(5000);
+      cy.get("a[href='prod.html?idp_=11']").contains('MacBook air').click();
+      cy.get("#tbodyid").contains("MacBook air").should("exist");
+      break;
+    case "MacBook Pro":
+      cy.get("a[onclick*='notebook']").click();
+      cy.get("a[class='hrefch']").contains('MacBook Pro').click();
+      cy.get("#tbodyid").contains("MacBook Pro").should("exist");
+      break;
+    default:
+      console.log("This Aint it");
+      break;
+  }
+});
 
-// When(`I filter product for {string} category`, (category) => {
-//   switch (category) {
-//     case "Phones":
-//       cy.get("#itemc").contains("Phones").click();
-//       break;
-//     case "Laptops":
-//       cy.get("#itemc").contains("Laptops").click();
-//       break;
-//     case "Monitors":
-//       cy.get("#itemc").contains("Monitor").click();
-//       break;
 
-//     // default:
-//     //   throw new Error(
-//     //     "Wrong Device name was inputed:" + device + "is not valid"
-//     //   );
-//     //   break;
-//   }
-// });
 
-// Then(`I should see the product {string}`, () => {
-//   cy.get("#tbodyid").contains("MacBook Pro").should("exist");
-// });
+When(`I add the current item to cart from the product page`, () => {
+  cy.contains("a.btn.btn-success.btn-lg", "Add to cart").click();
+  cy.get("a[id='cartur']").click();
+  cy.get("#tbodyid").contains("MacBook Pro").should("exist");
+});
 
-// Given(`I click and navigate to the "Macbook Pro" product page`, () => {
-//   cy.get(
-//     "body > div:nth-child(6) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > div:nth-child(2) > h4:nth-child(1) > a:nth-child(1)"
-//   ).click();
-//   cy.get(".name").contains("MacBook Pro").should("exist");
-// });
-
-// When(`I add the current item to cart from the product page`, () => {
-//   cy.get(".btn.btn-success.btn-lg").click();
-//   cy.window().then((win) => {
-//     cy.stub(win, "confirm").returns(true);
-//   });
-// });
-
-// When(`I navigate to the Cart page`, () => {
-//   cy.get("#cartur").click();
-// });
-
-// Then(`I verify the item {string} is present in the cart`, () => {
-//   cy.get("td:nth-child(2)").contains("MacBook Pro").should("exist");
-// });
-
-// When(
-//   `I click Place Order and fill out the Form with default information`,
-//   () => {
-//     cy.get(".btn.btn-success").click();
-//     cy.get("div[id='orderModal'] div[class='modal-content']").should(
-//       "be.visible"
-//     );
-
-//     cy.get("#name").type("test");
-//     cy.get("#country").type("test");
-//     cy.get("#city").type("test");
-//     cy.get("#card").type("test");
-
-//     cy.get("#month").type("test");
-//     cy.get("#year").type("test");
-//     cy.get("button[onclick='purchaseOrder()']").click();
-//   }
-// );
-
-// When(`I should see modal indicating a successful purchase`, () => {
-//   cy.get("sbody div:nth-child(11)").should("be.visible");
-// });
+When(
+  `I click Place Order and fill out the Form with default information`,
+  () => {
+    cy.get("button[data-target='#orderModal']").click();
+    cy.get("input[id='name']").type("John Smith");
+    cy.get("input[id='country']").type("USA");
+    cy.get("input[id='city']").type("West Hills, CA");
+    cy.get("input[id='card']").type("2233 4455 6677 8899");
+    cy.get("input[id='month']").type("12");
+    cy.get("input[id='year']").type("2028");
+    cy.get("button[onclick='purchaseOrder()']").click();
+    cy.get("h2:contains('Thank you for your purchase!')").should("exist");
+  }
+);

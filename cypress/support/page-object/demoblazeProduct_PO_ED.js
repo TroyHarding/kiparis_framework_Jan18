@@ -6,23 +6,27 @@ class demoblazeProduct {
     this.productName = ".name";
     this.productPrice = ".price-container";
     this.description = "#more-information > p";
-    this.addToCart = ".btn.btn-success.btn-lg";
+    this.btnToCart = ".btn.btn-success.btn-lg";
+  }
+  chooseCategory() {
+    cy.fixture("demoblaze_Leo.json").then((data) => {
+      cy.visit("https://www.demoblaze.com/");
+      cy.get(data.category).click();
+    });
   }
 
   verifyProduct() {
-    cy.fixture("demoblaze.json").then((data) => {
-        cy.visit("https://www.demoblaze.com/prod.html?idp_=1");
+    cy.fixture("demoblaze_Leo.json").then((data) => {
+      cy.get(data.productClick).click();
       cy.get(this.name).should("have.text", data.product);
       cy.get(this.price).should("have.text", data.price);
-      //TODO not working
-      //cy.get(this.description).should("have.text", data.description);
+      cy.get(this.description).should("have.text", data.description);
     });
   }
 
   addToCart() {
-    cy.get(this.addToCart).click();
+    cy.get(this.btnToCart).click();
   }
 }
-
 
 export default demoblazeProduct;
