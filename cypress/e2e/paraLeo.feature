@@ -1,15 +1,11 @@
 @para @paraLeo
 Feature: ParaBank
 
-
-
-
-
-  # @para @paraLeo1
-  # Scenario: Register
-  #   Given I open url "<baseUrl>"
-  #   Then I click link "<register>"
-  #   Then I interacts with the page "<register>"
+  @para @paraLeo1
+  Scenario: Register
+    Given I open url "<baseUrl>"
+    Then I click link "<register>"
+    Then I interacts with the page "<register>"
 
   @para @paraLeo2
   Scenario: Open New Account
