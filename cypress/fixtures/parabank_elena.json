@@ -1,0 +1,32 @@
+{
+    "baseUrl": "https://parabank.parasoft.com/",    
+    "registerHome": "a[href*='register.htm']",
+    "firstName": "input[id='customer.firstName']",
+    "lastName": "input[id='customer.lastName']",
+    "address": "input[id='customer.address.street']",
+    "city": "input[id='customer.address.city']",
+    "state": "input[id='customer.address.state']",
+    "zipCode": "input[id='customer.address.zipCode']",
+    "phone": "input[id='customer.phoneNumber']",
+    "ssn": "input[id='customer.ssn']",
+    "userName": "input[id='customer.username']",
+    "password": "input[id='customer.password']",
+    "confirm": "#repeatedPassword",
+    "registerForm": "input[value='Register']",
+    "registerUser":{
+        "firstName": "Kiparis1",
+        "lastName": "Cypress1",
+        "address": "123 Main str",
+        "city": "San Francisco",
+        "state": "CA",
+        "zipCode": "12345",
+        "phone": "4151234444",
+        "ssn": "11112223333",
+        "userName": "KiparisTest1",
+        "password": "CypressTest"
+    }
+
+    
+
+
+}

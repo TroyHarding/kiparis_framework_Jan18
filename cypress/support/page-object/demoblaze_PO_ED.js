@@ -11,12 +11,13 @@ class demoblaze_PO {
   loginValid() {
     cy.fixture("demoblaze.json").then((data) => {
       cy.visit(data.baseUrl);
-      cy.get(loginButton).click();
-      cy.get(usernameInput).type(data.username);
-      cy.get(passwordInput).type(data.password);
-      cy.get(loginButtonModal).click();
+      cy.get(this.loginButton).click();
+      cy.get(this.usernameInput).type(data.username);
+      cy.get(this.passwordInput).type(data.password);
+      cy.get(this.loginButtonModal).click();
     });
-  }
+  } 
 }
 
-export default demoblaze_PO;
+export default demoblaze_PO_ED
+;
