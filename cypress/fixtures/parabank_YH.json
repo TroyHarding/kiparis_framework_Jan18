@@ -14,7 +14,7 @@
     "leftPanel":"#leftPanel",
     "openAccountButton":"a[href='/parabank/openaccount.htm']",
     "formForNewAcccount":".ng-scope[ng-app='AddAccountApp']",
-    "accountType":"#type",
+    "accountType":"select#type",
     "checking":"#type > option[value='0']",
     "saving":"#type > option[value='1']"
 }
