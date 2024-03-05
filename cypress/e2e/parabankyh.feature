@@ -5,8 +5,8 @@ Feature: ParaBank
 
 
 
-    @para1 @paraYuliiaH1
-    Scenario: Register
+   # @para1 @paraYuliiaH1
+   # Scenario: Register
 
 
 
@@ -24,3 +24,4 @@ Feature: ParaBank
 
       @para2 @paraYuliiaH2
     Scenario: Tranfer Funds
+    #cypress run --env tags='@smoke' --headed
