@@ -1,0 +1,21 @@
+{
+    "baseUrl": "https://parabank.parasoft.com/",
+    "register": "a[href*= 'register']",
+  
+    "user": {
+      "firstName": "John",
+      "lastName": "Smith",
+      "street": "123 Main st",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "90210",
+      "phone": "+1(626)434-9021",
+      "ssn": "123456789",
+      "user": "1John2",
+      "pwd": "p@ss"
+    },
+  
+    "success": "Your account was created successfully. You are now logged in.",
+    "sumMin": "1",
+    "sumMax": "2000"
+  }
