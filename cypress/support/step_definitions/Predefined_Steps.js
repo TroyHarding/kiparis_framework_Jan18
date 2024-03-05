@@ -6,7 +6,6 @@ import {
   And,
 } from "@badeball/cypress-cucumber-preprocessor";
 import "cypress-iframe";
-import "cypress-iframe";
 
 Given(`I open url {string}`, (url) => {
   cy.visit(url);
@@ -118,12 +117,6 @@ Then(
   }
 );
 
-Then(
-  `element with selector {string} should contain text {string}`,
-  (selector, text) => {
-    cy.get(selector).contains(text).should("exist");
-  }
-);
 
 Then(
   `element with xpath {string} should NOT contain text {string}`,
@@ -140,19 +133,6 @@ Then(
   }
 );
 
-Then(
-  `the product details in element with selector {string} should contain text {string}`,
-  (selector, text) => {
-    cy.get(selector).contains(text).should("exist");
-  }
-);
-
-Then(
-  `element with selector {string} should contain text {string}`,
-  (selector, text) => {
-    cy.get(selector).contains(text).should("exist");
-  }
-);
 
 Then(
   `element with xpath {string} should NOT contain text {string}`,
@@ -161,13 +141,6 @@ Then(
   }
 );
 
-Then(
-  `element with selector {string} should contain text {string} and should NOT contain text {string}`,
-  (selector, text, text2) => {
-    cy.get(selector).contains(text).should("exist");
-    cy.get(selector).contains(text2).should("not.exist");
-  }
-);
 
 Then(
   `the product details in element with selector {string} should contain text {string}`,
