@@ -14,15 +14,15 @@
     "confirm": "#repeatedPassword",
     "registerForm": "input[value='Register']",
     "registerUser":{
-        "firstName": "Kiparis",
-        "lastName": "Cypress",
+        "firstName": "Kiparis1",
+        "lastName": "Cypress1",
         "address": "123 Main str",
         "city": "San Francisco",
         "state": "CA",
         "zipCode": "12345",
         "phone": "4151234444",
         "ssn": "11112223333",
-        "userName": "KiparisTest",
+        "userName": "KiparisTest1",
         "password": "CypressTest"
     }
 

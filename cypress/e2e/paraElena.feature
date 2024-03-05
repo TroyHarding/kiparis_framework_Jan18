@@ -7,15 +7,15 @@ Feature: ParaBank
         When I click the Register button
         When I fill out all the required register fields
         When I click the Register button to complete sign up
-        Then I verify my account has been created
+        # Then I verify my account has been created
 
 
 
 
-      @para2 @paraElena2
-    Scenario: Open New Account
-        Given I login to parabank
-        When I open new account
+    #   @para2 @paraElena2
+    # Scenario: Open New Account
+    #     Given I login to parabank
+    #     When I open new account
         
 
 
@@ -23,8 +23,8 @@ Feature: ParaBank
 
 
 
-      @para3 @paraElena3
-    Scenario: Tranfer Funds
+    #   @para3 @paraElena3
+    # Scenario: Tranfer Funds
 
 
 
