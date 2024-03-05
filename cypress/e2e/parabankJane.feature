@@ -19,7 +19,7 @@ Feature: parabank
 Scenario: Open new account
 Given I log in to parabank
 When I open new account 
-And I tranfer funds
+When I tranfer funds
 
 
 

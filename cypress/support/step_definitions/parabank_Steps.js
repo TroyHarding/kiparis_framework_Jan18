@@ -3,8 +3,7 @@ import {
   Given,
   When,
   Then,
-  And
-} from "@badeball/cypress-cucumber-preprocessor";
+  } from "@badeball/cypress-cucumber-preprocessor";
 import "cypress-iframe";
 
 // import parabank_PO from "../page-object/parabank_PO";
@@ -63,6 +62,7 @@ Given(`I log in to parabank`, () => {
     cy.get(data.userNameLogin).type(data.registerUser.userName);
     cy.get(data.passwordLogin).type(data.registerUser.password);
     cy.get(data.loginButton).click();
+    cy.wait(1000);
   });
 });
 
@@ -73,11 +73,11 @@ When(`I open new account`, () => {
   });
 });
 
-And(`I tranfer funds`, () => {
+When(`I tranfer funds`, () => {
   cy.fixture("parabankJane.json").then((data) => {
     cy.get(data.TransferHomePage).click();
     cy.get(data.Amount).type(data.userRegisterUser.Amount);
     cy.get(data.TransferButton).click();
-    cy.get(data.TransferComplete).contains(dataregisterUser);
+    cy.get(data.TransferComplete).contains(data.registerUser.TransferComplete);
   });
 });
