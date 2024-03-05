@@ -6,15 +6,12 @@ import {
   And,
 } from "@badeball/cypress-cucumber-preprocessor";
 import "cypress-iframe";
-<<<<<<< HEAD
-import demoblazeHome_PO_Leo from "../page-object/demoblazeHome_PO_Leo";
-import demoblazeCart_PO_Leo from "../page-object/demoblazeCart_PO_Leo";
-=======
+
 
 import demoblazeHome_PO from "../page-object/demoblazeHome_PO";
 import demoblazeCart_PO from "../page-object/demoblazeCart_PO";
 import demoblazeProduct from "../page-object/demoblazeProduct_PO";
->>>>>>> origin
+
 
 // NEW STUFF
 
