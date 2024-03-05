@@ -6,7 +6,6 @@ import {
   And,
 } from "@badeball/cypress-cucumber-preprocessor";
 import "cypress-iframe";
-import "cypress-iframe";
 
 import parabank_PO from "../page-object/parabank_PO";
 
@@ -54,8 +53,33 @@ Then(`I verify my account has been created`, () => {
   })
 });
 
+// Given(`I log in to parabank`, () => {
+//   const po = parabank_PO;
+//   po.login();
+//      });
+
 Given(`I log in to parabank`, () => {
-  const po = parabank_PO;
-  po.login();
+  cy.fixture("parabankJane.json").then((data) =>{
+    cy.visit(data.BaseUrl);
+    cy.get(data.userNameLogin).type(data.registerUser.userName);
+    cy.get(data.passwordLogin).type(data.registerUser.password);
+    cy.get(data.loginButton).click();
+  });
      });
 
+     When(`I open new account`, ()=>{
+      cy.fixture("parabankJane.json").then((data) =>{
+        cy.get(data.OpenAccountHomePage).click();
+        cy.get(data.OpenAccountSubmit).click();
+
+      });
+     });
+
+     And(`I tranfer funds`, ()=>{
+      cy.fixture("parabankJane.json").then((data) =>{
+        cy.get(data.TransferHomePage).click();
+        cy.get(data.Amount).type(data.userRegisterUser.Amount);
+        cy.get(data.TransferButton).click();
+
+      });
+     });

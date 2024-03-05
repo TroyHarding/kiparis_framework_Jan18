@@ -14,9 +14,18 @@
   "confirmPassword": "#repeatedPassword",
   "registerForm": "input[value='Register']",
   "SucsessInfo": "div[id='rightPanel']",
+  "userNameLogin": "input[name='username']",
+  "passwordLogin": "input[type='password']",
+  "loginButton":"input[type='submit']",
+  "OpenAccountHomePage": "a[href='/parabank/openaccount.htm']",
+  "OpenAccountSubmit": "input[value='Open New Account']",
+  "TransferHomePage": "a[href='/parabank/transfer.htm']",
+  "Amount": "#amount",
+  "TransferButton": "input[value='Transfer']"
 
 
-  "registerUser": {
+
+   "registerUser": {
     "firstName": "J",
     "lastName": "B",
     "address": "GA",
@@ -25,10 +34,11 @@
     "zipcode": "30024",
     "phone": "13454",
     "ssn": "4658435'",
-    "userName": "J",
+    "userName": "B",
     "password": "123",
     "confirmPassword": "123",
-    "SucsessInfo": "Your account was created successfully"
+    "SucsessInfo": "Your account was created successfully",
+    "Amount": "50"
 
   }
 }
