@@ -1,0 +1,17 @@
+{
+    "baseUrl": "https://parabank.parasoft.com/",    
+    "registerHome": "a[href*='register.htm']",
+    "firstName": "input[id='customer.firstName']",
+    "lastName": "input[id='customer.lastName']",
+    "address": "input[id='customer.address.street']",
+    "city": "input[id='customer.address.city']",
+    "zipCode": "input[id='customer.address.zipCode']",
+    "phone": "input[id='customer.phoneNumber']",
+    "ssn": "input[id='customer.ssn']",
+    "userName": "input[id='customer.username']",
+    "password": "input[id='customer.password']",
+    "confirm": "#repeatedPassword"
+    
+
+
+}
