@@ -1,5 +1,5 @@
 {
-    "baseUrl":"https://parabank.parasoft.com/",   
+    "baseUrl":"https://parabank.parasoft.com/parabank/index.htm",   
     "userNameField":"input[name='username']",
     "passwordField":"input[name='password']",
     "logInButton":"input[value='Log In']",
