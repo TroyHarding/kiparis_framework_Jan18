@@ -22,7 +22,7 @@
   "TransferHomePage": "a[href='/parabank/transfer.htm']",
   "Amount": "#amount",
   "TransferButton": "input[value='Transfer']",
-  "TransferComplete": ".ng-scope[ng-app='TransferApp']",
+  "TransferComplete": ".title",
 
 
 
@@ -35,12 +35,12 @@
     "zipcode": "30024",
     "phone": "13454",
     "ssn": "4658435'",
-    "userName": "mcm",
-    "password": "123",
-    "confirmPassword": "123",
+    "userName": "t",
+    "password": "t",
+    "confirmPassword": "t",
     "SucsessInfo": "Your account was created successfully",
     "Amount": "50",
-    "TransferComplete": "complete"
+    "TransferComplete": "Transfer Complete!"
 
   }
 }

@@ -1,12 +1,8 @@
 /// <reference types="cypress" />
-import {
-  Given,
-  When,
-  Then,
-  } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import "cypress-iframe";
 
-// import parabank_PO from "../page-object/parabank_PO";
+import Parabank_PO from "../page-object/Parabank_PO";
 
 Given(`I navigate to default parabank page`, () => {
   cy.fixture("parabankJane.json").then((data) => {
@@ -52,9 +48,9 @@ Then(`I verify my account has been created`, () => {
 });
 
 // Given(`I log in to parabank`, () => {
-//   const po = parabank_PO;
+//   const po = Parabank_PO;
 //   po.login();
-//      });
+// });
 
 Given(`I log in to parabank`, () => {
   cy.fixture("parabankJane.json").then((data) => {
