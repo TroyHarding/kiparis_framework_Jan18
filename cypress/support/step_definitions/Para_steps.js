@@ -30,12 +30,15 @@ When(`I fill out all the required register fields`, (url) => {
   });
 });
 
-When(`I click the Register button to complete sign up`, (url) => {
+When(`I click the Register button to complete sign up`, () => {
   cy.fixture("parabank_elena.json").then((data) => {
     cy.get(data.registerForm).click();
   });
 });
 
-// Then(`I verify my account has been created`, (url) => {
-
-// });
+Then(`I verify my account has been created`, () => {
+  cy.fixture("parabank_elena.json").then((data) => {
+    cy.get(data.welcomeMessage).should('contain', 'Welcome');
+    cy.get(data.accountCreatedSuccess).should("exist");
+  });
+});
