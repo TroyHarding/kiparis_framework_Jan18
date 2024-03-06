@@ -20,10 +20,10 @@ Feature: ParaBank
     Scenario: Open New Account
         When I click Open New Account button
         When I select an account type
-        # When I select default mimimum deposit
-    #    Then I click the Open New Account button
-    #    Then I verify my account has been created
-    #    Then I verify account exists on Accounts Overview tab
+        When I select default mimimum deposit
+        Then I click the Open New Account button
+        Then I verify my account has been created
+        Then I verify account exists on Accounts Overview tab
 
 
 

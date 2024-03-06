@@ -23,8 +23,8 @@
     "zipCode": "33333",
     "phone": "7779804587",
     "ssn": "7878787787",
-    "userName": "User Olena",
-    "password": "45697"
+    "userName": "testOlena",
+    "password": "test"
   },
 
   "buttonOpenAccount": "a[href*='openaccount.htm']",
@@ -33,9 +33,22 @@
   "logIn": "input[value='Log In']",
 
   "activetedUser":{
-    "name":"test",
+    "name":"testOlena",
     "password":"test"
-  }
+  }, 
+  "fieldtypeAccount": "#type",
+  "fieldDeposit": "#fromAccountId",
 
+  "valueNewAccount":{
+    "typeAccount":"option[value='1']",
+    "deposit":"option[label*='1']"
+  },
 
+  "btnNewAccount":"input[value='Open New Account']",
+  "fldMSG":"div[ng-if='showResult']",
+  "msgCreatedAccount":"Congratulations, your account is now open.",
+  
+  "btnAccountOverview":"a[href='/parabank/overview.htm']",
+  "tabAccountOverview":"table[id='accountTable']",
+  "numberAccount":"13"
 }
