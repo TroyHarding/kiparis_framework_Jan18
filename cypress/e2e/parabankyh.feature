@@ -17,7 +17,7 @@ Feature: ParaBank
     Scenario: Open New Account
     Given I log in to parabank with valid Account
     Then I open new "CHECKING" Account
-   # Then verify new acount created
+    Then verify new acount created
 
 
 

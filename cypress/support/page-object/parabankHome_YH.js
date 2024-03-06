@@ -36,7 +36,9 @@ class HomePage{
     openAccount(account){
       cy.fixture("parabank_YH.json").then((data) =>{
       cy.get(data.openAccountButton).click();
-      cy.get(data.formForNewAcccount).should("exist");
+      cy.log('This is a log message');
+      cy.get(data.formForNewAcccount).should('exist');
+      cy.log('This is a log message');
       switch (account) {
         case "CHECKING":
           cy.get(data.accountType).invoke("val", "1").trigger("change");
@@ -48,6 +50,12 @@ class HomePage{
       
     })
   }
+  verifyAccountOpened(){
+    cy.fixture("parabank_YH.json").then((data) =>{
+    cy.get(data.createdAccount).should().contains("Account Opened!");
+    cy.get(data.accountIdBox).contains(data.id);
+  })
 
+ }
 }
 export default HomePage;

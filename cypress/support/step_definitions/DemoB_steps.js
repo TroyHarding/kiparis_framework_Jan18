@@ -103,10 +103,11 @@ Then(`I should see modal indicating a successful purchase`, () => {
 });
 
 When(`I do stuff`, () => {
-  const po = demoblazeHome_PO;
+  const po = new demoblazeHome_PO();
   po.loginValid();
 });
+
 Then(`I place order`, () => {
-  const cart = new demoblazeCart_PO;
+  const cart = new demoblazeCart_PO();
   cart.placeOrder();
 });

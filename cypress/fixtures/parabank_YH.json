@@ -16,5 +16,10 @@
     "formForNewAcccount":".ng-scope[ng-app='AddAccountApp']",
     "accountType":"select#type",
     "checking":"#type > option[value='0']",
-    "saving":"#type > option[value='1']"
+    "saving":"#type > option[value='1']",
+    "createdAccount":".title",
+    "createdMassege":"Congratulations, your account is now open.",
+    "accountIdBox":"#newAccountId",
+    "id":"14121",
+    "createAccountButton":"input[value='Open New Account']"
 }
