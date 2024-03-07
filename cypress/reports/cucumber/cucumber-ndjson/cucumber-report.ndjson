@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {"testRunStarted":{"timestamp":{"seconds":1709604455,"nanos":3000000}}}
 {"testRunFinished":{"timestamp":{"seconds":1709604457,"nanos":246000000}}}
 =======
@@ -762,4 +763,6 @@
 {"testStepStarted":{"testStepId":"ad21efbd-b692-4752-bc30-f3660603a0f1","testCaseStartedId":"4f0209d4-94d4-445a-888e-9d660f8335f4","timestamp":{"seconds":1708908902,"nanos":841000000}}}
 {"testStepFinished":{"testStepId":"ad21efbd-b692-4752-bc30-f3660603a0f1","testCaseStartedId":"4f0209d4-94d4-445a-888e-9d660f8335f4","testStepResult":{"status":"SKIPPED","duration":{"seconds":0,"nanos":0}},"timestamp":{"seconds":1708908902,"nanos":841000000}}}
 {"testCaseFinished":{"testCaseStartedId":"4f0209d4-94d4-445a-888e-9d660f8335f4","timestamp":{"seconds":1708908902,"nanos":841000000},"willBeRetried":false}}
+>>>>>>> origin
+=======
 >>>>>>> origin
