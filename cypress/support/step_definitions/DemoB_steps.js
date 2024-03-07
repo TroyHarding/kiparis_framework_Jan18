@@ -98,16 +98,16 @@ When(
   }
 );
 
-Then(`I should see modal indicating a successful purchase`, () => {
+Then (`I should see modal indicating a successful purchase`, () => {
   cy.get(".sweet-alert.showSweetAlert.visible").should("exist");
 });
 
-When(`I do stuff`, () => {
+When (`I do stuff`, () => {
   const po = new demoblazeHome_PO();
   po.loginValid();
 });
 
-Then(`I place order`, () => {
+Then (`I place order`, () => {
   const cart = new demoblazeCart_PO();
   cart.placeOrder();
 });

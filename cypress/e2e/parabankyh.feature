@@ -1,27 +1,22 @@
 @para @paraYuliiaH
 Feature: ParaBank
 
-    Feature Description
+  Feature Description
 
 
 
-   # @para1 @paraYuliiaH1
-   # Scenario: Register
+  # @para1 @paraYuliiaH1
+  # Scenario: Register
 
 
-
-
-
-
-      @para2 @paraYuliiaH2
-    Scenario: Open New Account
+  @para2 @paraYuliiaH2
+  Scenario: Open New Account
     Given I log in to parabank with valid Account
-    Then I open new "CHECKING" Account
-    Then verify new acount created
+    When I open new "SAVINGS" Account
+    Then verify new account created
 
 
 
 
-      @para2 @paraYuliiaH2
-    Scenario: Tranfer Funds
-    #cypress run --env tags='@smoke' --headed
+  @para2 @paraYuliiaH2
+  Scenario: Tranfer Funds

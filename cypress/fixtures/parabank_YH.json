@@ -1,25 +1,24 @@
 {
-    "baseUrl":"https://parabank.parasoft.com/parabank/index.htm",   
-    "userNameField":"input[name='username']",
-    "passwordField":"input[name='password']",
-    "logInButton":"input[value='Log In']",
-    "validUser":{
-        "userName":"yhp",
-        "password":"osprey",
-        "firstName":"Yuliia",
-        "lastName":"Haponenko"
-    },
-    "leftMenu":".leftmenu",
-    "accountName":".smallText",
-    "leftPanel":"#leftPanel",
-    "openAccountButton":"a[href='/parabank/openaccount.htm']",
-    "formForNewAcccount":".ng-scope[ng-app='AddAccountApp']",
-    "accountType":"select#type",
-    "checking":"#type > option[value='0']",
-    "saving":"#type > option[value='1']",
-    "createdAccount":".title",
-    "createdMassege":"Congratulations, your account is now open.",
-    "accountIdBox":"#newAccountId",
-    "id":"14121",
-    "createAccountButton":"input[value='Open New Account']"
+  "baseUrl": "https://parabank.parasoft.com/parabank/index.htm",
+  "userNameField": "input[name='username']",
+  "passwordField": "input[name='password']",
+  "logInButton": "input[value='Log In']",
+  "validUser": {
+    "userName": "yhp",
+    "password": "osprey",
+    "firstName": "Yuliia",
+    "lastName": "Haponenko"
+  },
+  "leftMenu": ".leftmenu",
+  "accountName": ".smallText",
+  "leftPanel": "#leftPanel",
+  "openAccountButton": "a[href='/parabank/openaccount.htm']",
+  "formForNewAcccount": ".ng-scope[ng-app='AddAccountApp']",
+  "accountType": "select#type",
+  "checking": "#type > option[value='0']",
+  "saving": "#type > option[value='1']",
+  "createdAccount": ".title",
+  "createdMassege": "Congratulations, your account is now open.",
+  "accountIdBox": "#newAccountId",
+  "createAccountButton": "input[value='Open New Account']"
 }
