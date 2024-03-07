@@ -3,7 +3,7 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import "cypress-iframe";
 import parabank_PO from "../page-object/parabank_PO";
 
-Given("I open url {string}", () => {
+Given("I open new url {string}", () => {
   cy.fixture("parabank_Leo.json").then((data) => {
     cy.visit(data.baseUrl);
   });
