@@ -3,7 +3,11 @@
 class parabank_PO {
     constructor() {
       this.openAcc = "a[href='/parabank/openaccount.htm']";
-      
+      this.loginUsername = "input[name='username']";
+      this.loginPassword = "input[name='password']";
+      this.loginButton = "input[value='Log In']";
+      this.openAccountLink = "a[href='/parabank/openaccount.htm']";
+      this.openAccountButton = "input[value='Open New Account']";
     }
 
     register(){
@@ -21,6 +25,16 @@ class parabank_PO {
             cy.get(data.confirm).type(data.registerUser.password);
             cy.get(data.registerForm).click();
           });
+    }
+
+    login(){
+      cy.fixture("parabank_elena.json").then((data) => {
+        cy.visit(data.baseUrl);
+        cy.get(this.loginUsername).type(data.registerUser.userName);
+        cy.get(this.loginPassword).type(data.registerUser.password);
+        cy.get(this.loginButton).click();
+      });
+
     }
 
   

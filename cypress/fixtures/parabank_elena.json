@@ -14,19 +14,23 @@
     "confirm": "#repeatedPassword",
     "registerForm": "input[value='Register']",
     "registerUser":{
-        "firstName": "Kiparis1",
-        "lastName": "Cypress1",
+        "firstName": "Kiparis",
+        "lastName": "Cypress",
         "address": "123 Main str",
         "city": "San Francisco",
         "state": "CA",
         "zipCode": "12345",
         "phone": "4151234444",
         "ssn": "11112223333",
-        "userName": "KiparisTest1",
-        "password": "CypressTest"
+        "userName": "Kiparis",
+        "password": "Cypress"
     },
     "welcomeMessage": ".title",
-    "accountCreatedSuccess":  "div[id='rightPanel']"
+    "accountCreatedSuccess":  "div[id='rightPanel']",
+    "logOutLink": "a[href='/parabank/logout.htm']",
+    "accountOpenMessage": ".title",
+    "newAccountNumber": "#newAccountId"
+
 
     
 
