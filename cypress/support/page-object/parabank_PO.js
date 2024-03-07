@@ -24,4 +24,5 @@ class Parabank_PO {
       cy.get(data.openAccountConfirmation).contains(data.registerUser.openAccountConfirmation);
         })
 }
+}
 export default Parabank_PO;
