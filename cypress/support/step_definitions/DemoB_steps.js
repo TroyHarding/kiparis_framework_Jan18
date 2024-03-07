@@ -110,14 +110,6 @@ Then(`I place order`, () => {
   const cart = new demoblazeCart_PO;
   cart.placeOrder();
 });
-Then(`I verify header and footer is correct`, () => {
-  cy.get("#nava").should("be.visible");
-  cy.get("#navbarExample").should("be.visible");
-  cy.get("#footc").should("be.visible");
-  cy.get("#footc").contains("About Us").should("exist");
-  cy.get("#footc").contains("Get in Touch").should("exist");
-  cy.get("#footc").contains("PRODUCT STORE").should("exist");
-});
 
 When(`I filter product for {string} category`, (product) => {
   switch (product) {
@@ -205,29 +197,9 @@ When (`I do stuff`,()=>{
 
 // // NEW STUFF
 
-// Given(`I log in as a valid user to demoblaze`, () => {
-//   cy.fixture("demoblaze.json").then((data) => {
-//     cy.visit(data.baseUrl);
-//     cy.get(data.loginButton).click();
-//     cy.get("#loginusername").type(data.validUname);
-//     cy.wait(2000);
-//     cy.get("#loginpassword").type(data.validP);
-//     cy.wait(2000);
-//     cy.get("button[onclick='logIn()']").click();
-//     cy.wait(2000);
-//     // cy.get("div[id='logInModal'] div[class='modal-content']").should("not.be.visible");
-//     // cy.get("div[id='logInModal'] span[aria-hidden='true']").click();
-//   });
-// });
 
-// Then(`I verify header and footer is correct`, () => {
-//   cy.get("#nava").should("be.visible");
-//   cy.get("#navbarExample").should("be.visible");
-//   cy.get("#footc").should("be.visible");
-//   cy.get("#footc").contains("About Us").should("exist");
-//   cy.get("#footc").contains("Get in Touch").should("exist");
-//   cy.get("#footc").contains("PRODUCT STORE").should("exist");
-// });
+
+
 
 // When(`I filter product for {string} category`, (product) => {
 //   switch (product) {

@@ -182,10 +182,7 @@ import {
   //Hover
   Then(`I hover over elemt with xpath`, () => {});
   
-  // Given(`I log in as a valid user to demoblaze`, () => {
-  //   cy.visit("https://www.demoblaze.com");
-  //   cy.get("#login2").click();
-  // });
+ 
   
   When(`I filter product for {string} category`, (product) => {
     console.log("category:", product);
@@ -210,20 +207,8 @@ import {
         break;
     }
   });
-  Given(`I log in as a valid user to demoblaze`, () => {
-    cy.fixture("demoblaze.json").then((data) => {
-      cy.visit(data.baseUrl);
-      //Click Login
-      cy.get(data.loginbutton).click();
-      //Type username
-      cy.get("#loginusername").type(data.username);
-      //Type password
-      cy.get("#loginpassword").type(data.password).wait(1000);
-      //Click login
-      cy.get(data.loginbutton2).click();
-    });
-  });
-  Then("I verify header and footer is correct", () => {
+  //
+  
     // cy.get("a[id='login2']").click();
     // cy.get("input[id='loginusername']").type("User599").wait(1000);
     // cy.get("input[id='loginpassword']").type("PassTestNew");
@@ -280,10 +265,6 @@ import {
     }
   );
   
-  // Given(`I log in as a valid user to demoblaze`, () => {
-  //   cy.visit("https://www.demoblaze.com");
-  //   cy.get("#login2").click();
-  // });
   
   When(`I filter product for {string} category`, (product) => {
     console.log("category:", product);
@@ -308,34 +289,7 @@ import {
         break;
     }
   });
-  Given(`I log in as a valid user to demoblaze`, () => {
-    cy.fixture("demoblaze.json").then((data) => {
-      cy.visit(data.baseUrl);
-      //Click Login
-      cy.get(data.loginbutton).click();
-      //Type username
-      cy.get("#loginusername").type(data.username);
-      //Type password
-      cy.get("#loginpassword").type(data.password).wait(1000);
-      //Click login
-      cy.get(data.loginbutton2).click();
-    });
-  });
-  Then("I verify header and footer is correct", () => {
-    // cy.get("a[id='login2']").click();
-    // cy.get("input[id='loginusername']").type("User599").wait(1000);
-    // cy.get("input[id='loginpassword']").type("PassTestNew");
-    // cy.get("button[onclick='logIn()']").click();
-    cy.get("a[href='index.html']").should("exist");
-    cy.get("a[data-target='#exampleModal']").should("exist");
-    cy.get("a[data-target='#videoModal']").should("exist");
-    cy.get("a[id='cartur']").should("exist");
-    cy.get("a[id='logout2']").should("exist");
-    cy.get("a[id='nameofuser']").should("exist");
-    cy.get("h4[class='grrrr']").contains("About Us").should("exist");
-    cy.get("h4[class='grrrr']").contains("Get in Touch").should("exist");
-  });
-  
+    
   Given("I click and navigate to the {string} product page", (product) => {
     switch (product) {
       case "MacBook air":
@@ -379,27 +333,8 @@ import {
   );
   // // NEW STUFF
 
-// Given(`I log in as a valid user to demoblaze`, () => {
-//   cy.visit("https://www.demoblaze.com/");
-//   cy.get("#login2").click();
-//   cy.get("#loginusername").type("mcm");
-//   cy.wait(2000);
-//   cy.get("#loginpassword").type("123");
-//   cy.wait(2000);
-//   cy.get("button[onclick='logIn()']").click();
-//   cy.wait(2000);
-//   // cy.get("div[id='logInModal'] div[class='modal-content']").should("not.be.visible");
-//   // cy.get("div[id='logInModal'] span[aria-hidden='true']").click();
-// });
 
-// Then(`I verify header and footer is correct`, () => {
-//   cy.get("#nava").should("be.visible");
-//   cy.get("#navbarExample").should("be.visible");
-//   cy.get("#footc").should("be.visible");
-//   cy.get("#footc").contains("About Us").should("exist");
-//   cy.get("#footc").contains("Get in Touch").should("exist");
-//   cy.get("#footc").contains("PRODUCT STORE").should("exist");
-// });
+
 
 // When(`I filter product for {string} category`, (product) => {
 //   switch (product) {
