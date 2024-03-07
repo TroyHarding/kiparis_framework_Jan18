@@ -55,3 +55,19 @@ Then("I login as a {string}", (link) => {
     lg.login();
   });
 });
+Given("I log in to parabank with valid Account", () => {
+  let lg = new parabank_PO();
+  lg.logIn();
+  lg.verifyAccountServices();
+  lg.verifyLeftMenu();
+});
+
+When("I open new {string} Account", (account) => {
+  let newAccount = new parabank_PO();
+  newAccount.openAccount(account);
+});
+
+Then("verify new account created", () => {
+  let vr = new parabank_PO();
+  vr.verifyAccountOpened();
+});
