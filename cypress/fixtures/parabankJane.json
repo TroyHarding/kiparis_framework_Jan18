@@ -1,7 +1,7 @@
 {
   "BaseUrl": "https://parabank.parasoft.com/",
   "registerHome": "a[href*='register.htm']",
-  "firstName": "input[id='customer.firstName']",
+  "name": "input[id='customer.firstName']",
   "lastName": "input[id='customer.lastName']",
   "address": "input[id='customer.address.street']",
   "city": "input[id='customer.address.city']",
@@ -27,8 +27,8 @@
 
 
 
-   "registerUser": {
-    "firstName": "J",
+   "user": {
+    "name": "J",
     "lastName": "B",
     "address": "GA",
     "city": "AtL",
@@ -36,9 +36,9 @@
     "zipcode": "30024",
     "phone": "13454",
     "ssn": "4658435'",
-    "userName": "t",
-    "password": "t",
-    "confirmPassword": "t",
+    "userName": "e",
+    "password": "e",
+    "confirmPassword": "e",
     "SucsessInfo": "Your account was created successfully",
     "Amount": "50",
     "TransferComplete": "Transfer Complete!",
