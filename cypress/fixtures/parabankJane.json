@@ -23,6 +23,7 @@
   "Amount": "#amount",
   "TransferButton": "input[value='Transfer']",
   "TransferComplete": ".title",
+  "OpenAccountConfirmation": "#rightPanel",
 
 
 
@@ -40,7 +41,8 @@
     "confirmPassword": "t",
     "SucsessInfo": "Your account was created successfully",
     "Amount": "50",
-    "TransferComplete": "Transfer Complete!"
+    "TransferComplete": "Transfer Complete!",
+    "OpenAccountConfirmation": "Account Opened!"
 
   }
 }

@@ -66,6 +66,7 @@ When(`I open new account`, () => {
   cy.fixture("parabankJane.json").then((data) => {
     cy.get(data.OpenAccountHomePage).click();
     cy.get(data.OpenAccountSubmit).click();
+    cy.get(data.OpenAccountConfirmation).contains(data.registerUser.OpenAccountConfirmation)
   });
 });
 

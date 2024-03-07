@@ -16,8 +16,12 @@ class Parabank_PO {
     });
   }
 
-  // openNewAccount(){
-
-  // }
+  openNewAccount(){
+    cy.fixture("parabankJane.json").then((data) => {
+      cy.visit(data.BaseUrl);
+      cy.get(data.openNewAccount).click();
+      cy.get(data.OpenAccountSubmit).click();
+      cy.get(data.openAccountConfirmation).contains(data.registerUser.openAccountConfirmation);
+        })
 }
 export default Parabank_PO;
