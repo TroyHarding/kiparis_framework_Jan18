@@ -70,6 +70,12 @@ When(`I open new account`, () => {
   });
 });
 
+// When(`I open new account`, () => {
+//   const po = Parabank_PO;
+//   po.openMewAccount();
+
+// })
+
 When(`I tranfer funds`, () => {
   cy.fixture("parabankJane.json").then((data) => {
     cy.get(data.TransferHomePage).click();
