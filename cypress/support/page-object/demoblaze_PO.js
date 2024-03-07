@@ -1,3 +1,4 @@
+
 /// <reference types="cypress" />
 
 class demoblaze_PO {
@@ -17,6 +18,11 @@ class demoblaze_PO {
       cy.get(loginButtonModal).click();
     });
   }
+
+
 }
 
+
+
 export default demoblaze_PO;
+  
