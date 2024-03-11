@@ -1,11 +1,12 @@
 /// <reference types="cypress" />
 
-class demobank_PO {
+class parabank_PO {
     constructor() {
+      
       
     }
   
     
   }
   
-  export default demobank_PO;
+  export default parabank_PO;

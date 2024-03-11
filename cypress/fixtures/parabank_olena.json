@@ -50,5 +50,20 @@
   
   "btnAccountOverview":"a[href='/parabank/overview.htm']",
   "tabAccountOverview":"table[id='accountTable']",
-  "numberAccount":"13"
+  "numberAccount":"13",
+
+  "transferFunds" : "a[href='/parabank/transfer.htm']",
+  "amount":"#amount",
+  "fromAccount":"#fromAccountId",
+  "toAccount":"#toAccountId",
+  "btnTransfer":"input[value='Transfer']",
+
+  "valueTransfer":{
+    "amount":"50",
+    "fromAccount":"13677",
+    "toAccount":"13788"
+  },
+
+  "tabTransfer":".ng-scope[ng-app='TransferApp']",
+  "msgTransfer":"has been transferred"
 }
