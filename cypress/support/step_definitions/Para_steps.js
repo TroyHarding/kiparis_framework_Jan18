@@ -71,3 +71,9 @@ Then("verify new account created", () => {
   let vr = new parabank_PO();
   vr.verifyAccountOpened();
 });
+
+Given ('I navigate to parabank main page', () =>{
+  cy.fixture("parabank_YH.json").then((data) => {
+  cy.visit(data.baseUrl);
+  })
+})

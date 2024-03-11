@@ -175,6 +175,7 @@ class parabank_PO {
       cy.get(data.accountIdBox).invoke("text").should("not.be.empty");
     });
   }
+  
 }
 
 export default parabank_PO;

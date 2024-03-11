@@ -5,8 +5,12 @@ Feature: ParaBank
 
 
 
-  # @para1 @paraYuliiaH1
-  # Scenario: Register
+  @para1 @paraYuliiaH1
+  Scenario: Register
+  Given I navigate to parabank main page
+  When I register new user
+  Then I verify  the user exists
+
 
 
   @para2 @paraYuliiaH2
