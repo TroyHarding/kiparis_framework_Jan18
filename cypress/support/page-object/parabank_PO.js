@@ -33,7 +33,7 @@ class parabank_PO {
     }
   
     register() {
-      cy.fixture("parabank_Leo.json").then((data) => {
+      cy.fixture("parabank_Nadiia.json").then((data) => {
         cy.get(this.firstName).type(data.user.firstName);
         cy.get(this.lastName).type(data.user.lastName);
         cy.get(this.addrStr).type(data.user.street);
@@ -51,14 +51,14 @@ class parabank_PO {
     }
   
     login() {
-      cy.fixture("parabank_Leo.json").then((data) => {
+      cy.fixture("parabank_Nadiia.json").then((data) => {
         cy.get(this.userLog).type(data.user.user);
         cy.get(this.pwdLog).type(data.user.pwd);
         cy.get(this.submitLog).click();
       });
     }
     open_new_account() {
-      cy.fixture("parabank_Leo.json").then((data) => {
+      cy.fixture("parabank_Nadiia.json").then((data) => {
         cy.get(this.openAcc).click();
         cy.get(this.accDd).invoke("val", "1").trigger("change");
         cy.get(this.btnOpenAcc).click();
@@ -72,7 +72,7 @@ class parabank_PO {
     }
   
     transfer_funds_min() {
-      cy.fixture("parabank_Leo.json").then((data) => {
+      cy.fixture("parabank_Nadiia.json").then((data) => {
         cy.get(this.transfer).click();
         cy.get(this.amount).type(data.sumMin);
         cy.get(this.fromAcc)
@@ -95,7 +95,7 @@ class parabank_PO {
     }
   
     transfer_funds_max() {
-      cy.fixture("parabank_Leo.json").then((data) => {
+      cy.fixture("parabank_Nadiia.json").then((data) => {
         cy.get(this.transfer).click();
         cy.get(this.amount).type(data.sumMax);
         cy.get(this.fromAcc)

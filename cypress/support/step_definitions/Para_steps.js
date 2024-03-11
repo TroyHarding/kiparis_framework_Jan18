@@ -4,14 +4,14 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import "cypress-iframe";
 import parabank_PO from "../page-object/parabank_PO";
 
-Given("I open url {string}", () => {
-  cy.fixture("parabank_Leo.json").then((data) => {
+Given("I open new url {string}", () => {
+  cy.fixture("parabank_Nadiia.json").then((data) => {
     cy.visit(data.baseUrl);
   });
 });
 
 Then("I click link {string}", (link) => {
-  cy.fixture("parabank_Leo.json").then((data) => {
+  cy.fixture("parabank_Nadiia.json").then((data) => {
     switch (link) {
       case "<register>":
         cy.get(data.register).click();
@@ -25,7 +25,7 @@ Then("I click link {string}", (link) => {
 });
 
 Then("I interacts with the page {string}", (link) => {
-  cy.fixture("parabank_Leo.json").then((data) => {
+  cy.fixture("parabank_Nadiia.json").then((data) => {
     switch (link) {
       case "<register>":
         const rgst = new parabank_PO();
@@ -51,7 +51,7 @@ Then("I interacts with the page {string}", (link) => {
 });
 
 Then("I login as a {string}", (link) => {
-  cy.fixture("parabank_Leo.json").then((data) => {
+  cy.fixture("parabank_Nadiia.json").then((data) => {
     const lg = new parabank_PO();
     lg.login();
   });

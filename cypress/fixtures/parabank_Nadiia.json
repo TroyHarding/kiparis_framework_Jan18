@@ -3,16 +3,16 @@
     "register": "a[href*= 'register']",
   
     "user": {
-      "firstName": "John",
-      "lastName": "Smith",
-      "street": "123 Main st",
+      "firstName": "Na",
+      "lastName": "Zh",
+      "street": "111 South st",
       "city": "Los Angeles",
       "state": "CA",
-      "zip": "90210",
-      "phone": "+1(626)434-9021",
-      "ssn": "123456789",
-      "user": "1John2",
-      "pwd": "p@ss"
+      "zip": "90110",
+      "phone": "+1(630)123-4567",
+      "ssn": "11111111",
+      "user": "Nad22",
+      "pwd": "1234"
     },
   
     "success": "Your account was created successfully. You are now logged in.",
