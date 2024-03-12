@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 class parabank_PO {
+
   constructor() {
     this.firstName = "input[id='customer.firstName']";
     this.lastName = "input[id='customer.lastName']";
@@ -205,3 +206,4 @@ class parabank_PO {
 }
 
 export default parabank_PO;
+
