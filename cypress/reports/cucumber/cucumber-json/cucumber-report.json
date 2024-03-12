@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+[]
+=======
 [
   {
     "description": "  Feature Description",
@@ -14,12 +17,71 @@
             "hidden": true,
             "result": {
               "status": "passed",
+<<<<<<< HEAD
               "duration": 9000000
+=======
+              "duration": 36000000
+>>>>>>> origin/main
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
+<<<<<<< HEAD
+=======
+            "line": 6,
+            "name": "I open url \"https://google.com\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3021000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I should see page title as \"Google\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 77000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "element with selector \"#APjFqb\" should be present",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 84000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I type \"Behavior Driven Development\" into element with selector \"#APjFqb\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2735000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+>>>>>>> origin/main
             "line": 10,
             "name": "I navigate to parabank main page",
             "match": {
@@ -27,7 +89,11 @@
             },
             "result": {
               "status": "passed",
+<<<<<<< HEAD
               "duration": 1062000000
+=======
+              "duration": 4043000000
+>>>>>>> origin/main
             }
           },
           {
@@ -40,7 +106,11 @@
             },
             "result": {
               "status": "passed",
+<<<<<<< HEAD
               "duration": 3113000000
+=======
+              "duration": 560000000
+>>>>>>> origin/main
             }
           },
           {
@@ -53,7 +123,11 @@
             },
             "result": {
               "status": "passed",
+<<<<<<< HEAD
               "duration": 397000000
+=======
+              "duration": 338000000
+>>>>>>> origin/main
             }
           },
           {
@@ -61,7 +135,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 7000000
+              "duration": 140000000
             }
           }
         ],
@@ -293,7 +367,11 @@
             "hidden": true,
             "result": {
               "status": "passed",
+<<<<<<< HEAD
               "duration": 5000000
+=======
+              "duration": 32000000
+>>>>>>> origin/main
             }
           },
           {
@@ -321,8 +399,13 @@
               "location": "not available:0"
             },
             "result": {
+<<<<<<< HEAD
               "status": "skipped",
               "duration": 0
+=======
+              "status": "passed",
+              "duration": 825000000
+>>>>>>> origin/main
             }
           },
           {
@@ -334,16 +417,78 @@
               "location": "not available:0"
             },
             "result": {
+<<<<<<< HEAD
               "status": "skipped",
               "duration": 0
+=======
+              "status": "passed",
+              "duration": 49000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "element with selector \"#searchInput\" should be present",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 75000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 33,
+            "name": "I type \"The Great Emu War\" into element with selector \"#searchInput\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 408000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 34,
+            "name": "I click on element with selector \"#search-form > fieldset > button\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2770000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 35,
+            "name": "element with selector \"#content\" should contain text \"The Great Emu War\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 275000000
+>>>>>>> origin/main
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "result": {
+<<<<<<< HEAD
               "status": "skipped",
               "duration": 0
+=======
+              "status": "passed",
+              "duration": 173000000
+>>>>>>> origin/main
             }
           }
         ],
@@ -468,6 +613,11 @@
         "line": 1
       }
     ],
+<<<<<<< HEAD
     "uri": "cypress/e2e/paraLeo.feature"
+=======
+    "uri": "cypress\\e2e\\predefined.feature"
+>>>>>>> origin/main
   }
 ]
+>>>>>>> efdf8f64f3ccd8799396d14c7522e4c907b41247

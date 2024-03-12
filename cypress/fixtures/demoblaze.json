@@ -1,21 +1,10 @@
 {
-    "baseUrl": "https://www.demoblaze.com/",    
-    "username": "YH",
-    "password": "osprey",
-    "loginbutton": "#login2",
-    "country": "USA",
-    "city": "Cypress",
-     "card": "55555553435567",
-     
-
-    "invalidUser": "billyRayCyrus",
-    "invalidPassword": "password2",
-
-    "product": "Samsung galaxy s6",
-    "price": "$360 *includes tax",
-    "description": "The Samsung Galaxy S6 is powered by 1.5GHz octa-core Samsung Exynos 7420 processor and it comes with 3GB of RAM. The phone packs 32GB of internal storage cannot be expanded.    ",
-     
-    "product1": "Macbook Pro",
-    "price1": "1100"
-}
+    "baseUrl": "https://www.demoblaze.com/",
+    "loginButton": "#login2",
+    "validUname": "mcm",
+    "validP": "123",
   
+    "invalidUname": "hhh",
+    "invalidP": "456"
+
+}

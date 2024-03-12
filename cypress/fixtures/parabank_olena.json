@@ -1,0 +1,69 @@
+{
+  "baseUrl": "https://parabank.parasoft.com/",
+  "registerHome": "a[href*='register.htm']",
+  "firstName": "input[id$='customer.firstName']",
+  "lastName": "input[id='customer.lastName']",
+  "address": "input[id='customer.address.street']",
+  "city": "input[id*='customer.address.city']",
+  "state": "input[id='customer.address.state']",
+  "zipCode": "input[id='customer.address.zipCode']",
+  "phone": "input[id='customer.phoneNumber']",
+  "ssn": "input[id='customer.ssn']",
+  "userName": "input[id='customer.username']",
+  "password": "input[id='customer.password']",
+  "confirmPassword": "#repeatedPassword",
+  "registerForm": "input[value='Register']",
+
+  "registerUser": {
+    "firstName": "Olena",
+    "lastName": "DFDFD",
+    "address": "321 FDFd",
+    "city": "Orlando",
+    "state": "Florida",
+    "zipCode": "33333",
+    "phone": "7779804587",
+    "ssn": "7878787787",
+    "userName": "testOlena",
+    "password": "test"
+  },
+
+  "buttonOpenAccount": "a[href*='openaccount.htm']",
+  "logInUserName": "input[name='username']",
+  "logInUserPassword": "input[name='password']",
+  "logIn": "input[value='Log In']",
+
+  "activetedUser":{
+    "name":"testOlena",
+    "password":"test"
+  }, 
+  "fieldtypeAccount": "#type",
+  "fieldDeposit": "#fromAccountId",
+
+  "valueNewAccount":{
+    "typeAccount":"option[value='1']",
+    "deposit":"option[label*='1']"
+  },
+
+  "btnNewAccount":"input[value='Open New Account']",
+  "fldMSG":"div[ng-if='showResult']",
+  "msgCreatedAccount":"Congratulations, your account is now open.",
+  
+  "btnAccountOverview":"a[href='/parabank/overview.htm']",
+  "tabAccountOverview":"table[id='accountTable']",
+  "numberAccount":"13",
+
+  "transferFunds" : "a[href='/parabank/transfer.htm']",
+  "amount":"#amount",
+  "fromAccount":"#fromAccountId",
+  "toAccount":"#toAccountId",
+  "btnTransfer":"input[value='Transfer']",
+
+  "valueTransfer":{
+    "amount":"50",
+    "fromAccount":"13677",
+    "toAccount":"13788"
+  },
+
+  "tabTransfer":".ng-scope[ng-app='TransferApp']",
+  "msgTransfer":"has been transferred"
+}

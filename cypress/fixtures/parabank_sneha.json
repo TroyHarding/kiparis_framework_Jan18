@@ -1,0 +1,31 @@
+{
+    "baseUrl": "https://parabank.parasoft.com/",
+    "registerHome": "a[href='register.htm']",
+    "firstName": "input[id='customer.firstName']",
+    "lastName": "input[id='customer.lastName']",
+    "address": "input[id='customer.address']",
+    "street": "input[id='customer.address.street']",
+    "city": "input[id='customer.address.city']",
+    "state": "input[id='customer.address.state']",
+    "zipCode": "input[id='customer.address.zipCode']",
+    "phone#": "input[id='customer.address.phone']",
+    "ssn": "input[id='customer.ssn']",
+    "username": "input[id='customer.username']",
+    "password": "input[id='customer.password']",
+    "confirmPassword": "#repeatedPassword",
+    "registerForm": "dinput[value='Register']",
+    "registerUser": {
+        "firstName": "sneha",
+        "lastName": "G",
+        "address": "123",
+        "street": "123 main st",
+        "city": "sss",
+        "state": "ca",
+        "zipCode": "98707",
+        "phone#": "123123412",
+        "ssn": "24342424",
+        "username": "sneha123",
+        "password": "sneha123"
+
+    }
+}
