@@ -6,7 +6,7 @@
   "logInButton": "input[value='Log In']",
   "logOutButton": "a[href='/parabank/logout.htm']",
   "validUser": {
-    "userName": "yh",
+    "userName": "yhll",
     "password": "osprey",
     "firstName": "Yuliia",
     "lastName": "Haponenko"
@@ -49,7 +49,7 @@
     "zip": "956473",
     "phoneNumber": "76885949",
     "ssn": "898877777",
-    "userFullName": "yh",
+    "userFullName": "yhll",
     "passwordReg": "osprey",
     "confirmPassword": "osprey"
 
