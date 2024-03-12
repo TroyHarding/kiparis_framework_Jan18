@@ -55,11 +55,18 @@ Then("I login as a {string}", (link) => {
     lg.login();
   });
 });
+
 Given("I log in to parabank with valid Account", () => {
   let lg = new parabank_PO();
-  lg.logIn();
-  lg.verifyAccountServices();
-  lg.verifyLeftMenu();
+  cy.fixture("parabank_YH.json").then((data) => {
+    cy.visit(data.baseUrl);
+
+    if (cy.get(data.userNameField).should("exist")) {
+      lg.logIn();
+      lg.verifyAccountServices();
+      lg.verifyLeftMenu();
+    }
+  });
 });
 
 When("I open new {string} Account", (account) => {
@@ -72,8 +79,20 @@ Then("verify new account created", () => {
   vr.verifyAccountOpened();
 });
 
-Given ('I navigate to parabank main page', () =>{
+Given("I navigate to parabank main page", () => {
   cy.fixture("parabank_YH.json").then((data) => {
-  cy.visit(data.baseUrl);
+    cy.visit(data.baseUrl);
+  });
+});
+
+When("I register new user", () => {
+  const createUser = new parabank_PO();
+  createUser.registerNewUser();
+});
+Then("I verify  the user exists", () => {
+  cy.fixture("parabank_YH.json").then((data) => {
+  const userVerification = new parabank_PO();
+  userVerification.verifyUserExists();
+  cy.get(data.logOutButton).click();
   })
-})
+});

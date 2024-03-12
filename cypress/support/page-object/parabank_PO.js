@@ -118,7 +118,6 @@ class parabank_PO {
   }
   logIn() {
     cy.fixture("parabank_YH.json").then((data) => {
-      cy.visit(data.baseUrl);
       cy.get(data.userNameField).type(data.validUser.userName);
       cy.get(data.passwordField).type(data.validUser.password);
       cy.get(data.logInButton).click();
@@ -175,7 +174,31 @@ class parabank_PO {
       cy.get(data.accountIdBox).invoke("text").should("not.be.empty");
     });
   }
+  registerNewUser(){
+    cy.fixture("parabank_YH.json").then((data) => {
+    cy.get(data.registerButton).click();
+    cy.get(data.inputfirstName).type(data.registerUser.mainName);
+    cy.get(data.inputlastName).type(data.registerUser.lastName);
+    cy.get(data.inputStreet).type(data.registerUser.street);
+    cy.get(data.inputCity).type(data.registerUser.cityName);
+    cy.get(data.inputState).type(data.registerUser.state);
+    cy.get(data.inputZip).type(data.registerUser.zip);
+    cy.get(data.inputphoneNum).type(data.registerUser.phoneNumber);
+    cy.get(data.inputSsn).type(data.registerUser.ssn);
+    cy.get(data.inputUserName).type(data.registerUser.userFullName);
+    cy.get(data.inputPassword).type(data.registerUser.passwordReg);
+    cy.get(data.inputConfirmPassword).type(data.registerUser.confirmPassword);
+    cy.get(data.submitRegistartionButton).click();
+    cy.get(data.successMsg).should("contain", data.success);
+  })
+}
+verifyUserExists(){
+  cy.fixture("parabank_YH.json").then((data) => {
+  cy.get(data.successMsg).should('contain', data.success);
   
+  
+  })
+}
 }
 
 export default parabank_PO;

@@ -22,5 +22,11 @@ Feature: ParaBank
 
 
 
-  @para2 @paraYuliiaH2
-  Scenario: Tranfer Funds
+#   @para2 @paraYuliiaH2
+#   Scenario: Tranfer Funds
+#   Given I log in to parabank with valid Account
+#   When I transfer "100" dollars to account
+#   Then verify transfer completed
+
+
+# #Test verify with non-registered account

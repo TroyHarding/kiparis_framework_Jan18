@@ -1,10 +1,12 @@
 {
   "baseUrl": "https://parabank.parasoft.com/parabank/index.htm",
+  "registerButton": "a[href*= 'register']",
   "userNameField": "input[name='username']",
   "passwordField": "input[name='password']",
   "logInButton": "input[value='Log In']",
+  "logOutButton": "a[href='/parabank/logout.htm']",
   "validUser": {
-    "userName": "yhp",
+    "userName": "yh",
     "password": "osprey",
     "firstName": "Yuliia",
     "lastName": "Haponenko"
@@ -20,5 +22,36 @@
   "createdAccount": ".title",
   "createdMassege": "Congratulations, your account is now open.",
   "accountIdBox": "#newAccountId",
-  "createAccountButton": "input[value='Open New Account']"
+  "createAccountButton": "input[value='Open New Account']",
+
+  "inputfirstName": "input[id='customer.firstName']",
+  "inputlastName": "input[id='customer.lastName']",
+  "inputStreet": "input[id='customer.address.street']",
+  "inputCity": "input[id='customer.address.city']",
+  "inputState": "input[id='customer.address.state']",
+  "inputZip": "input[id='customer.address.zipCode']",
+  "inputphoneNum": "input[id='customer.phoneNumber']",
+  "inputSsn": "input[id='customer.ssn']",
+  "inputUserName": "input[id='customer.username']",
+  "inputPassword": "input[id='customer.password']",
+  "inputConfirmPassword": "input[id='repeatedPassword']",
+  "submitRegistartionButton": "td > input[type='submit']",
+  "successMsg": "div > p",
+  "success": "Your account was created successfully. You are now logged in.",
+  "welcomeUser":"h1.title",
+
+  "registerUser": {
+    "mainName": "Yuliia",
+    "lastName": "Haponenko",
+    "street": "44444 190th streat",
+    "cityName": "LA",
+    "state": "CA",
+    "zip": "956473",
+    "phoneNumber": "76885949",
+    "ssn": "898877777",
+    "userFullName": "yh",
+    "passwordReg": "osprey",
+    "confirmPassword": "osprey"
+
+  }
 }
