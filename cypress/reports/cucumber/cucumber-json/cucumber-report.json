@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+[]
+=======
 [
   {
     "description": "",
@@ -257,3 +260,4 @@
     "uri": "cypress\\e2e\\predefined.feature"
   }
 ]
+>>>>>>> efdf8f64f3ccd8799396d14c7522e4c907b41247

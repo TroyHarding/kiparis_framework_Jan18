@@ -7,11 +7,11 @@ import {
 } from "@badeball/cypress-cucumber-preprocessor";
 import "cypress-iframe";
 
+
 import demoblazeHome_PO from "../page-object/demoblazeHome_PO";
 import demoblazeCart_PO from "../page-object/demoblazeCart_PO";
 import demoblazeProduct from "../page-object/demoblazeProduct_PO";
 
-  // NEW STUFF
 
 Given(`I log in as a valid user to demoblaze`, () => {
     cy.fixture("demoblaze.json").then((data) => {
