@@ -6,9 +6,9 @@ import {
   } from "@badeball/cypress-cucumber-preprocessor";
   import "cypress-iframe";
   
-  Given(`I open url {string}`, (url) => {
-    cy.visit(url);
-  });
+  // Given(`I open url {string}`, (url) => {
+  //   cy.visit(url);
+  // });
   
   Given(`I ignore error`, () => {
     cy.on("uncaught:exception", (err, runnable, promise) => {
@@ -182,10 +182,7 @@ import {
   //Hover
   Then(`I hover over elemt with xpath`, () => {});
   
-  // Given(`I log in as a valid user to demoblaze`, () => {
-  //   cy.visit("https://www.demoblaze.com");
-  //   cy.get("#login2").click();
-  // });
+ 
   
   When(`I filter product for {string} category`, (product) => {
     console.log("category:", product);
@@ -210,20 +207,8 @@ import {
         break;
     }
   });
-  Given(`I log in as a valid user to demoblaze`, () => {
-    cy.fixture("demoblaze.json").then((data) => {
-      cy.visit(data.baseUrl);
-      //Click Login
-      cy.get(data.loginbutton).click();
-      //Type username
-      cy.get("#loginusername").type(data.username);
-      //Type password
-      cy.get("#loginpassword").type(data.password).wait(1000);
-      //Click login
-      cy.get(data.loginbutton2).click();
-    });
-  });
-  Then("I verify header and footer is correct", () => {
+  //
+  
     // cy.get("a[id='login2']").click();
     // cy.get("input[id='loginusername']").type("User599").wait(1000);
     // cy.get("input[id='loginpassword']").type("PassTestNew");
@@ -280,10 +265,6 @@ import {
     }
   );
   
-  // Given(`I log in as a valid user to demoblaze`, () => {
-  //   cy.visit("https://www.demoblaze.com");
-  //   cy.get("#login2").click();
-  // });
   
   When(`I filter product for {string} category`, (product) => {
     console.log("category:", product);
@@ -308,34 +289,7 @@ import {
         break;
     }
   });
-  Given(`I log in as a valid user to demoblaze`, () => {
-    cy.fixture("demoblaze.json").then((data) => {
-      cy.visit(data.baseUrl);
-      //Click Login
-      cy.get(data.loginbutton).click();
-      //Type username
-      cy.get("#loginusername").type(data.username);
-      //Type password
-      cy.get("#loginpassword").type(data.password).wait(1000);
-      //Click login
-      cy.get(data.loginbutton2).click();
-    });
-  });
-  Then("I verify header and footer is correct", () => {
-    // cy.get("a[id='login2']").click();
-    // cy.get("input[id='loginusername']").type("User599").wait(1000);
-    // cy.get("input[id='loginpassword']").type("PassTestNew");
-    // cy.get("button[onclick='logIn()']").click();
-    cy.get("a[href='index.html']").should("exist");
-    cy.get("a[data-target='#exampleModal']").should("exist");
-    cy.get("a[data-target='#videoModal']").should("exist");
-    cy.get("a[id='cartur']").should("exist");
-    cy.get("a[id='logout2']").should("exist");
-    cy.get("a[id='nameofuser']").should("exist");
-    cy.get("h4[class='grrrr']").contains("About Us").should("exist");
-    cy.get("h4[class='grrrr']").contains("Get in Touch").should("exist");
-  });
-  
+    
   Given("I click and navigate to the {string} product page", (product) => {
     switch (product) {
       case "MacBook air":
@@ -377,4 +331,37 @@ import {
       cy.get("h2:contains('Thank you for your purchase!')").should("exist");
     }
   );
-  
+  // // NEW STUFF
+
+
+
+
+// When(`I filter product for {string} category`, (product) => {
+//   switch (product) {
+//     case "Laptops":
+//       cy.get("a[onclick*='notebook']").click();
+//       cy.get("#tbodyid").contains("MacBook Pro").should("exist");
+//       cy.get("#tbodyid").contains("Sony vaio i7").should("exist");
+//       break;
+//     case "Phones":
+//       cy.get("a[onclick*='Phones']").click();
+//       cy.get("#tbodyid").contains("Samsung galaxy s6").should("exist");
+//       cy.get("#tbodyid").contains("Nexus 6").should("exist");
+//       break;
+//     case "Monitors":
+//       cy.get("a[onclick*='Monitors']").click();
+//       cy.get("#tbodyid").contains("Apple monitor 24").should("exist");
+//       cy.get("#tbodyid").contains("ASUS Full HD").should("exist");
+//       break;
+//     default:
+//       console.log("This Aint it");
+//       break;
+//   }
+// });
+// // When (`I filter product for "Laptops" category`,() => {
+// //   cy.get("a[onclick*='notebook']").click();
+// // });
+
+// Then(`I should see the product {string}`, (text) => {
+//   cy.get("#tbodyid").contains(text).should("exist");
+// });
