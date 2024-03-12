@@ -6,7 +6,7 @@ Feature: ParaBank
 @para1 @paraSneha1
 Scenario: Regsiter
 Given I navigate to the default parabank page
-# When I click the Register button
+# When I click the default Register button
 # When I fill out all of the required registration details
 # And I click the Register button
 # Then I verify my account has been created
