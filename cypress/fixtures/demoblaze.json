@@ -1,0 +1,10 @@
+{
+    "baseUrl": "https://www.demoblaze.com/",
+    "loginButton": "#login2",
+    "validUname": "mcm",
+    "validP": "123",
+  
+    "invalidUname": "hhh",
+    "invalidP": "456"
+
+}
