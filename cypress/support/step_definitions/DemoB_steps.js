@@ -98,18 +98,20 @@ When(
   }
 );
 
-Then(`I should see modal indicating a successful purchase`, () => {
+Then (`I should see modal indicating a successful purchase`, () => {
   cy.get(".sweet-alert.showSweetAlert.visible").should("exist");
 });
 
-When(`I do stuff`, () => {
-  const po = demoblazeHome_PO;
+When (`I do stuff`, () => {
+  const po = new demoblazeHome_PO();
   po.loginValid();
 });
-Then(`I place order`, () => {
-  const cart = new demoblazeCart_PO;
+
+Then (`I place order`, () => {
+  const cart = new demoblazeCart_PO();
   cart.placeOrder();
 });
+
 
 When(`I filter product for {string} category`, (product) => {
   switch (product) {
@@ -273,4 +275,5 @@ When (`I do stuff`,()=>{
 // //   const cart = new demoblazeCart_PO;
 // //   cart.placeOrder();
 // // });
+
 

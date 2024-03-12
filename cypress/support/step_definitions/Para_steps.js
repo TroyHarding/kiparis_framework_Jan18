@@ -6,7 +6,8 @@ import parabank_PO from "../page-object/parabank_PO";
 
 Given(`I navigate to the default parabank page`, () => {
   cy.fixture("parabank_olena.json").then((data) => {
-
+  });
+});
 
 
 Given("I open new url {string}", () => {
@@ -190,6 +191,20 @@ Then("I login as a {string}", (link) => {
   });
 });
 
+
+Given("I log in to parabank with valid Account", () => {
+  let lg = new parabank_PO();
+  cy.fixture("parabank_YH.json").then((data) => {
+    cy.visit(data.baseUrl);
+
+    if (cy.get(data.userNameField).should("exist")) {
+      lg.logIn();
+      lg.verifyAccountServices();
+      lg.verifyLeftMenu();
+    }
+    });
+  });
+
 Given("I open para url {string}", () => {
   cy.fixture("parabank_Nadiia.json").then((data) => {
     cy.visit(data.baseUrl);
@@ -206,8 +221,38 @@ Then("I click para link {string}", (link) => {
       default:
         console.log("I can't find the link");
         break;
+
     }
   });
+});
+
+
+When("I open new {string} Account", (account) => {
+  let newAccount = new parabank_PO();
+  newAccount.openAccount(account);
+});
+
+Then("verify new account created", () => {
+  let vr = new parabank_PO();
+  vr.verifyAccountOpened();
+});
+
+Given("I navigate to parabank main page", () => {
+  cy.fixture("parabank_YH.json").then((data) => {
+    cy.visit(data.baseUrl);
+  });
+});
+
+When("I register new user", () => {
+  const createUser = new parabank_PO();
+  createUser.registerNewUser();
+});
+Then("I verify  the user exists", () => {
+  cy.fixture("parabank_YH.json").then((data) => {
+  const userVerification = new parabank_PO();
+  userVerification.verifyUserExists();
+  cy.get(data.logOutButton).click();
+  })
 });
 
 Then("I interacts with the  register page {string}", (link) => {
@@ -257,4 +302,3 @@ When("I click the Register button", () => {
 When("I fill out all of the required registration details", () => {});
 When("I click the Register button", () => {});
 Then("I verify my account has been created", () => {});
-
