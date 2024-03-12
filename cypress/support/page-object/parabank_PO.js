@@ -46,7 +46,7 @@ class parabank_PO {
       cy.get(this.password).type(data.user.pwd);
       cy.get(this.confirmPsw).type(data.user.pwd);
       cy.get(this.submitReg).click();
-      cy.get(this.successMsg).should("contain", data.success);
+      // cy.get(this.successMsg).should("contain", data.success);
     });
   }
 
@@ -62,12 +62,12 @@ class parabank_PO {
       cy.get(this.openAcc).click();
       cy.get(this.accDd).invoke("val", "1").trigger("change");
       cy.get(this.btnOpenAcc).click();
-      cy.get("p").should(
-        "contain",
-        "Congratulations, your account is now open."
-      );
-      cy.get(this.newAccID).click();
-      cy.get(this.accType).should("contain", "SAVINGS");
+      // cy.get("p").should(
+      //   "contain",
+      //   "Congratulations, your account is now open."
+      // );
+      // cy.get(this.newAccID).click();
+      // cy.get(this.accType).should("contain", "SAVINGS");
     });
   }
 
@@ -115,6 +115,92 @@ class parabank_PO {
       cy.get(this.submitTransfer).click();
       cy.get(this.resultTransfer).should("contain", "Transfer Complete!");
     });
+  }
+
+    registerUser() {
+      cy.fixture("parabank_Nadiia.json").then((data) => {
+        cy.get(this.firstName).type(data.user.firstName);
+        cy.get(this.lastName).type(data.user.lastName);
+        cy.get(this.addrStr).type(data.user.street);
+        cy.get(this.addrCity).type(data.user.city);
+        cy.get(this.addrState).type(data.user.state);
+        cy.get(this.addrZip).type(data.user.zip);
+        cy.get(this.phoneNum).type(data.user.phone);
+        cy.get(this.ssn).type(data.user.ssn);
+        cy.get(this.userName).type(data.user.user);
+        cy.get(this.password).type(data.user.pwd);
+        cy.get(this.confirmPsw).type(data.user.pwd);
+        cy.get(this.submitReg).click();
+        cy.get(this.successMsg).should("contain", data.success);
+      });
+    }
+  
+  
+    loginUser() {
+      cy.fixture("parabank_Nadiia.json").then((data) => {
+        cy.get(this.userLog).type(data.user.user);
+        cy.get(this.pwdLog).type(data.user.pwd);
+        cy.get(this.submitLog).click();
+      });
+    }
+    open_new_account1() {
+      cy.fixture("parabank_Nadiia.json").then((data) => {
+        cy.get(this.openAcc).click();
+        cy.get(this.accDd).invoke("val", "1").trigger("change");
+        cy.get(this.btnOpenAcc).click();
+        cy.get("p").should(
+          "contain",
+          "Congratulations, your account is now open."
+        );
+        cy.get(this.newAccID).click();
+        cy.get(this.accType).should("contain", "SAVINGS");
+      });
+    }
+  
+    transfer_funds_min() {
+      cy.fixture("parabank_Nadiia.json").then((data) => {
+        cy.get(this.transfer).click();
+        cy.get(this.amount).type(data.sumMin);
+        cy.get(this.fromAcc)
+          .find("option")
+          .eq(1)
+          .then(($option) => {
+            const optionText = $option.text();
+            cy.get(this.fromAcc).select(optionText);
+          });
+        cy.get(this.toAcc)
+          .find("option")
+          .eq(0)
+          .then(($option) => {
+            const optionText = $option.text();
+            cy.get(this.toAcc).select(optionText);
+          });
+        cy.get(this.submitTransfer).click();
+        cy.get(this.resultTransfer).should("contain", "Transfer Complete!");
+      });
+    }
+  
+    transfer_funds_max() {
+      cy.fixture("parabank_Nadiia.json").then((data) => {
+        cy.get(this.transfer).click();
+        cy.get(this.amount).type(data.sumMax);
+        cy.get(this.fromAcc)
+          .find("option")
+          .eq(1)
+          .then(($option) => {
+            const optionText = $option.text();
+            cy.get(this.fromAcc).select(optionText);
+          });
+        cy.get(this.toAcc)
+          .find("option")
+          .eq(0)
+          .then(($option) => {
+            const optionText = $option.text();
+            cy.get(this.toAcc).select(optionText);
+          });
+        cy.get(this.submitTransfer).click();
+        cy.get(this.resultTransfer).should("contain", "Transfer Complete!");
+      });
   }
 }
 

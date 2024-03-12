@@ -1,10 +1,10 @@
 {
     "baseUrl": "https://www.demoblaze.com/",
-    "username": "billyjoebob",
-    "password": "password1",
-
-    "product": "Samsung galaxy s6",
-    "price": "$360",
-    "description": ""
-  }
+    "loginButton": "#login2",
+    "validUname": "mcm",
+    "validP": "123",
   
+    "invalidUname": "hhh",
+    "invalidP": "456"
+
+}
