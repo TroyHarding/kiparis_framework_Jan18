@@ -56,13 +56,13 @@ Then("I login as a {string}", (link) => {
   });
 });
 
-Given("I open new url {string}", () => {
+Given("I open para url {string}", () => {
   cy.fixture("parabank_Nadiia.json").then((data) => {
     cy.visit(data.baseUrl);
   });
 });
 
-Then("I click link {string}", (link) => {
+Then("I click para link {string}", (link) => {
   cy.fixture("parabank_Nadiia.json").then((data) => {
     switch (link) {
       case "<register>":
@@ -76,7 +76,7 @@ Then("I click link {string}", (link) => {
   });
 });
 
-Then("I interacts with the page {string}", (link) => {
+Then("I interacts with the  register page {string}", (link) => {
   cy.fixture("parabank_Nadiia.json").then((data) => {
     switch (link) {
       case "<register>":
@@ -102,7 +102,7 @@ Then("I interacts with the page {string}", (link) => {
   });
 });
 
-Then("I login as a {string}", (link) => {
+Then("I login as {string}", (link) => {
   cy.fixture("parabank_Nadiia.json").then((data) => {
     const lg = new parabank_PO();
     lg.login();

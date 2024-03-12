@@ -117,7 +117,7 @@ class parabank_PO {
     });
   }
 
-    register() {
+    registerUser() {
       cy.fixture("parabank_Nadiia.json").then((data) => {
         cy.get(this.firstName).type(data.user.firstName);
         cy.get(this.lastName).type(data.user.lastName);
@@ -136,14 +136,14 @@ class parabank_PO {
     }
   
   
-    login() {
+    loginUser() {
       cy.fixture("parabank_Nadiia.json").then((data) => {
         cy.get(this.userLog).type(data.user.user);
         cy.get(this.pwdLog).type(data.user.pwd);
         cy.get(this.submitLog).click();
       });
     }
-    open_new_account() {
+    open_new_account1() {
       cy.fixture("parabank_Nadiia.json").then((data) => {
         cy.get(this.openAcc).click();
         cy.get(this.accDd).invoke("val", "1").trigger("change");
